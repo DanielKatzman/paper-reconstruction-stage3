@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "scope": "Synthetic production handoff only; not real reconstruction capacity",
+  "upstream_version": "0.9.31",
+  "runtime_version": "0.9.32",
+  "geometries": 69,
+  "occurrences": 134,
+  "working_edges": 24,
+  "complete_pose_support_evidence_and_scores_equal": true,
+  "working_pool_exactly_equal": true,
+  "hypotheses_archive_sha256": "a09c1ec2b92f926b49332f66c3503071070060801021cfafda09b7dfb6063830",
+  "working_pool_sha256": "c170c98a9610f14c343574fb80e092a0d513d81c6bc39cf53219309d51d733e8",
+  "training_performed": false,
+  "real_puzzle_assembly_performed": false
+}

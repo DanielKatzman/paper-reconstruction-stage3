@@ -1,0 +1,3 @@
+{"accepted": true, "bbox_xywh": [10, 20, 256, 256], "capture_id": "capture_00", "original_size_hw": [200, 200], "piece_mask_path": "masks/p.png", "piece_path": "pieces/p.png", "schema_version": "paper-segmentation-manifest-1.0"}
+{"accepted": true, "bbox_xywh": [10, 20, 256, 256], "capture_id": "capture_01", "original_size_hw": [200, 200], "piece_mask_path": "masks/p.png", "piece_path": "pieces/p.png", "schema_version": "paper-segmentation-manifest-1.0"}
+{"accepted": true, "bbox_xywh": [10, 20, 256, 256], "capture_id": "capture_02", "original_size_hw": [200, 200], "piece_mask_path": "masks/p.png", "piece_path": "pieces/p.png", "schema_version": "paper-segmentation-manifest-1.0"}

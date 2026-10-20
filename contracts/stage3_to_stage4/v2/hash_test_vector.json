@@ -1,0 +1,28 @@
+{
+  "value": {
+    "unicode": "\u05d0",
+    "native_matrix": [
+      [
+        1.0,
+        0.0,
+        40.0
+      ],
+      [
+        0.0,
+        1.0,
+        -1.25
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "flags": [
+      false,
+      null
+    ]
+  },
+  "canonical_utf8": "{\"flags\":[false,null],\"native_matrix\":[[1.0,0.0,40.0],[0.0,1.0,-1.25],[0.0,0.0,1.0]],\"unicode\":\"\\u05d0\"}",
+  "sha256": "522f033fe9a86bee923a4b58a274561fcd77d2581a5c8af3bd1c0c4f0bc18368"
+}

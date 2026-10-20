@@ -1,0 +1,7 @@
+# Receipts seal exact bytes, including synthetic JSON/JSONL line endings.
+# Preserve the same artifacts on Windows and Linux checkouts.
+* -text
+*.pt binary
+*.npz binary
+*.png binary
+*.gz binary

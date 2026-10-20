@@ -1,0 +1,110 @@
+{
+  "arrays_path": "pieces/capture_00.npz",
+  "arrays_sha256": "54e20a4696e47b4887827411751c65625a5ca7a8c02719f1e0fc2bac9b250287",
+  "candidate_count": 1,
+  "candidate_fragments": [
+    {
+      "candidate_id": "candidate_0001",
+      "end_index": 63,
+      "end_xy_crop": [
+        208.0,
+        203.0
+      ],
+      "end_xy_source": [
+        218.0,
+        223.0
+      ],
+      "hypothesis": "parent_raw",
+      "length_fraction": 0.25,
+      "length_points": 32,
+      "rank": 1,
+      "score": 0.9,
+      "source": "default",
+      "split_threshold": null,
+      "start_index": 32,
+      "start_xy_crop": [
+        208.0,
+        48.0
+      ],
+      "start_xy_source": [
+        218.0,
+        68.0
+      ],
+      "wraps": false
+    }
+  ],
+  "capture_id": "capture_00",
+  "config_hash": "4b8d8a596117c1c58cea0f9b1b64549dd2ff4a5d9c27920c060c5c55f4b80c82",
+  "coordinate_frames": {
+    "crop_to_source_homography": [
+      [
+        1,
+        0,
+        10
+      ],
+      [
+        0,
+        1,
+        20
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "piece_crop": {
+      "origin": "top_left",
+      "units": "pixels",
+      "x_axis": "right",
+      "y_axis": "down"
+    },
+    "source_capture": {
+      "origin": "top_left",
+      "size_hw": [
+        200,
+        200
+      ],
+      "units": "pixels",
+      "x_axis": "right",
+      "y_axis": "down"
+    }
+  },
+  "model_format": "onnx",
+  "model_sha256": "3e80716280375146e2ef66942688e2a262e503df1011918caff262f0bae388a4",
+  "overlay_path": null,
+  "piece_id": "capture_00",
+  "piece_mask_sha256": "aa0516db3a300ffc39d4f12d7b08bcd880e359dd3390548843f60deafb4a777b",
+  "piece_sha256": "73d7ed9877bc3b373ef42a3cec0d2e94ee1b2f32c7296c6067032d2b3b949d3e",
+  "point_count": 128,
+  "point_order": "clockwise_circular",
+  "release_manifest_sha256": "0381683f5c8226974d73915b355bdd5936d80707219e7f083dcdf08f1ecfcfbc",
+  "release_version": "1.0.0",
+  "role_names": [
+    "seam",
+    "page_border",
+    "uncertain"
+  ],
+  "runtime": "onnxruntime-cpu",
+  "schema_version": "stage2.edge-hypotheses.v1",
+  "source_checkpoint_sha256": "36dd4eb0f13bc49fc2efc791cca1de03d34997704e11cce5d7cff8a326c1a6fc",
+  "stage1_input_fingerprint": "c70358f1b9c42fb7e7f39257214d8002376ac90eebf24c1ded58f7fd7ceadf2d",
+  "stage1_provenance": {
+    "accepted": true,
+    "bbox_xywh": [
+      10,
+      20,
+      256,
+      256
+    ],
+    "capture_id": "capture_00",
+    "original_size_hw": [
+      200,
+      200
+    ],
+    "piece_mask_path": "masks/p.png",
+    "piece_path": "pieces/p.png",
+    "schema_version": "paper-segmentation-manifest-1.0"
+  },
+  "stage1_record_fingerprint": "2a856c604eb26defa279d5bde069d29f45cace3b8222009a0571e3db1885d72f"
+}

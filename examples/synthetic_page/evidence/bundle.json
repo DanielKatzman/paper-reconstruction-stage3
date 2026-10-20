@@ -1,0 +1,1027 @@
+{
+  "algorithm": "stage3.alpha-evidence.v0931",
+  "archive": {
+    "path": "hypotheses.jsonl.gz",
+    "sha256": "a09c1ec2b92f926b49332f66c3503071070060801021cfafda09b7dfb6063830",
+    "size": 29923
+  },
+  "assets": {
+    "assets/73d7ed9877bc3b373ef42a3cec0d2e94ee1b2f32c7296c6067032d2b3b949d3e.png": {
+      "path": "assets/73d7ed9877bc3b373ef42a3cec0d2e94ee1b2f32c7296c6067032d2b3b949d3e.png",
+      "sha256": "73d7ed9877bc3b373ef42a3cec0d2e94ee1b2f32c7296c6067032d2b3b949d3e",
+      "size": 758
+    },
+    "assets/93bb2e7e8a7b49adafacca397c09d5c44f0caf64419c01a789aed13319af3ca2.npz": {
+      "path": "assets/93bb2e7e8a7b49adafacca397c09d5c44f0caf64419c01a789aed13319af3ca2.npz",
+      "sha256": "93bb2e7e8a7b49adafacca397c09d5c44f0caf64419c01a789aed13319af3ca2",
+      "size": 2512
+    },
+    "assets/aa0516db3a300ffc39d4f12d7b08bcd880e359dd3390548843f60deafb4a777b.png": {
+      "path": "assets/aa0516db3a300ffc39d4f12d7b08bcd880e359dd3390548843f60deafb4a777b.png",
+      "sha256": "aa0516db3a300ffc39d4f12d7b08bcd880e359dd3390548843f60deafb4a777b",
+      "size": 382
+    }
+  },
+  "candidates": [
+    {
+      "candidate": {
+        "candidate_id": "candidate_0001",
+        "end_index": 63,
+        "end_xy_crop": [
+          208.0,
+          203.0
+        ],
+        "end_xy_source": [
+          218.0,
+          223.0
+        ],
+        "hypothesis": "parent_raw",
+        "length_fraction": 0.25,
+        "length_points": 32,
+        "rank": 1,
+        "score": 0.9,
+        "source": "default",
+        "split_threshold": null,
+        "start_index": 32,
+        "start_xy_crop": [
+          208.0,
+          48.0
+        ],
+        "start_xy_source": [
+          218.0,
+          68.0
+        ],
+        "wraps": false
+      },
+      "candidate_key": "capture_00/candidate_0001",
+      "observation_key": "capture_00",
+      "piece_id": "capture_00"
+    },
+    {
+      "candidate": {
+        "candidate_id": "candidate_0001",
+        "end_index": 127,
+        "end_xy_crop": [
+          48.0,
+          53.0
+        ],
+        "end_xy_source": [
+          58.0,
+          73.0
+        ],
+        "hypothesis": "parent_raw",
+        "length_fraction": 0.25,
+        "length_points": 32,
+        "rank": 1,
+        "score": 0.9,
+        "source": "default",
+        "split_threshold": null,
+        "start_index": 96,
+        "start_xy_crop": [
+          48.0,
+          208.0
+        ],
+        "start_xy_source": [
+          58.0,
+          228.0
+        ],
+        "wraps": false
+      },
+      "candidate_key": "capture_01/candidate_0001",
+      "observation_key": "capture_01",
+      "piece_id": "capture_01"
+    }
+  ],
+  "capacity": {
+    "baseline_target_pieces": 20,
+    "demonstrated_reliable_piece_capacity": null,
+    "milestone_pieces": 30
+  },
+  "configuration": {
+    "correction_configuration": {
+      "alternatives_per_parent": 24,
+      "alternatives_per_piece_pair": 12,
+      "beam_width": 32,
+      "coarse_samples": 32,
+      "consensus_distance_px": 8.0,
+      "local_seeds_per_window": 16,
+      "maximum_refinement_displacement_px": 64.0,
+      "minimum_observable_score": 0.35,
+      "minimum_support_length_px": 48.0,
+      "refinement_distance_px": 16.0,
+      "refinement_iterations": 10,
+      "refinement_seeds": 12,
+      "seeds_per_parent": 640,
+      "support_distance_px": 8.0,
+      "verification_samples": 96
+    },
+    "policy": {
+      "alternatives_per_piece_pair": 24,
+      "beam_width": 32,
+      "evaluation_tolerance_px": 4.0,
+      "expanded_control_budget": 24,
+      "extension_family_slots": 2,
+      "extension_quality_slots": 8,
+      "extension_slots": 12,
+      "guided_geometry_score_slack": 0.03,
+      "guided_maximum_peak_width_px": 8.0,
+      "guided_minimum_gain": 0.03,
+      "guided_scan_radii_px": [
+        16,
+        32,
+        48
+      ],
+      "guided_scan_step_px": 4,
+      "guided_seeds_per_piece_pair": 8,
+      "larger_pilot_started": false,
+      "learned_maximum_crop_displacement_px": 32.0,
+      "learned_minimum_score_gain": 0.02,
+      "learned_minimum_valid_fraction": 0.1,
+      "learned_refinement_perspective_steps": [
+        2e-06,
+        5e-07
+      ],
+      "learned_refinement_rotation_degrees": [
+        0.15,
+        0.05
+      ],
+      "learned_refinement_scale_steps": [
+        0.005,
+        0.001
+      ],
+      "learned_refinement_seeds": 4,
+      "learned_refinement_steps_px": [
+        4.0,
+        1.0
+      ],
+      "learned_weight_limit": 0.15,
+      "maximum_fit_condition": 1000000.0,
+      "maximum_local_anisotropy": 8.0,
+      "maximum_local_scale": 7.0,
+      "maximum_probe_displacement_fraction": 0.5,
+      "maximum_probe_displacement_px": 1024.0,
+      "minimum_denominator_ratio": 0.15,
+      "minimum_fit_anisotropy": 0.0005,
+      "minimum_fit_length_px": 96.0,
+      "minimum_fit_pairs": 24,
+      "minimum_local_scale": 0.15,
+      "minimum_refinement_displacement_px": 128.0,
+      "minimum_validation_samples": 12,
+      "mode_quality_temperature": 0.12,
+      "mode_radius_px": 12.0,
+      "new_pose_fitting": true,
+      "new_proposal_slots": 4,
+      "new_proposals_per_seed_family": 2,
+      "original_fallback_slots": 12,
+      "parent_membership_changed": false,
+      "parents_per_evaluation_block": 16,
+      "pipeline_baseline_goal_physical_pieces": 30,
+      "pool_control_underconstraint_penalty": 0.1,
+      "projective_ridge": 0.001,
+      "protected_original_slots": 6,
+      "quality_slots": 3,
+      "rank_metadata_scope": "controls preserve historical metadata; new variants recompute shortlist and screening ranks",
+      "refinement_distance_px": 32.0,
+      "refinement_iterations": 16,
+      "refinement_samples": 192,
+      "refinement_seeds_per_piece_pair": 24,
+      "refinement_step_fractions": [
+        1.0,
+        0.5,
+        0.25
+      ],
+      "robust_keep_fraction": 0.9,
+      "score_before_pruning": true,
+      "selection_samples": 384,
+      "shortlist_cap": 128,
+      "shortlist_new_origin_slots": 12,
+      "stability_blocks": 4,
+      "stability_iterations": 8,
+      "stability_perturbation_px": 0.25,
+      "stability_probe_limit_px": 12.0,
+      "stability_ridge_factors": [
+        0.5,
+        2.0
+      ],
+      "stability_seed_limit": 8,
+      "stability_source_anisotropy_minimum": 0.0,
+      "tangent_seed_offsets_px": [
+        -12.0,
+        0.0,
+        12.0
+      ],
+      "training_performed": true,
+      "transform_duplicate_px": 2.0,
+      "unchanged_control_budget": 12,
+      "underconstraint_penalty": 0.0,
+      "validation_block_score_slack": 0.03,
+      "validation_blocks": 8,
+      "validation_score_improvement": 1e-05,
+      "validation_support_ratio": 0.95,
+      "verification_samples": 384,
+      "visual_ambiguous_width_query_px": 8.0,
+      "visual_depths_query_px": [
+        2.0,
+        4.0,
+        8.0,
+        12.0,
+        16.0
+      ],
+      "visual_highpass_radius": 3,
+      "visual_mask_validity": 0.99,
+      "visual_minimum_length_query_px": 48.0,
+      "visual_minimum_samples": 32,
+      "visual_minimum_texture_rms": 0.01,
+      "visual_offsets_query_px": [
+        -16,
+        -12,
+        -8,
+        -4,
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "visual_samples": 512,
+      "visual_score_slack": 0.03,
+      "visual_weight_limit": 0.05
+    },
+    "pose_configuration": {
+      "alignment_samples": 24,
+      "alternatives_per_parent": 3,
+      "alternatives_per_piece_pair": 3,
+      "beam_width": 16,
+      "collision_grid": 24,
+      "cycle_tolerance_px": 8.0,
+      "evaluation_tolerance_px": 4.0,
+      "family": "similarity",
+      "maximum_assembly_collision": 0.08,
+      "maximum_normal_penalty": 0.35,
+      "maximum_normalized_residual": 0.03,
+      "maximum_pair_collision": 0.08,
+      "maximum_scale": 2.0,
+      "minimum_fit_length_px": 24.0,
+      "minimum_scale": 0.5,
+      "pair_block_size": 32,
+      "seed": 9001
+    },
+    "recipe": {
+      "global_samples": 512,
+      "historical_chain_exactly_reproduced_on_new_inputs": false,
+      "local_spacing_px": 4.0,
+      "local_uncertainty": 0.25,
+      "local_window_budget": 16,
+      "maximum_candidates": 1024,
+      "name": "frozen-core-composition-v1",
+      "parents_per_physical_pair": 4,
+      "parents_per_query": 20,
+      "retrieval_pool_per_query": 80,
+      "scope": "Frozen shape retrieval, symmetric MLP/CNN ranking, gated windows, similarity, sliding and guarded projective fitting, broad geometry and RGB continuation. No unqualified displacement/choice correction.",
+      "strip_depth": 33,
+      "working_pool_per_physical_pair": 24
+    }
+  },
+  "coordinate_frame": "Native cropped image pixels; x right, y down; homogeneous 3x3 maps piece_b into piece_a.",
+  "correction_scorer": {
+    "enabled": false,
+    "reason": "v0930_no_calibration_operating_point"
+  },
+  "counts": {
+    "candidates": 2,
+    "geometries": 69,
+    "occurrences": 134,
+    "pieces": 3,
+    "working_edges": 24
+  },
+  "global_assembly_performed": false,
+  "identity": "317d177396021085f3a0cbb64c89bb99e36dc94e2aa7737d09111767e08960d0",
+  "manifest_sha256": "686b2e71e284fff3b202eff3977aafb2c939bd891650e221836dc4a7fcf6b8e0",
+  "occurrence_contract": "Every variant/row retains native candidate keys, complete pose/support, original matrix, method metadata and observable evidence; no score summation across occurrences.",
+  "optimizer_steps": 0,
+  "pieces": {
+    "capture_00": {
+      "contour": "assets/93bb2e7e8a7b49adafacca397c09d5c44f0caf64419c01a789aed13319af3ca2.npz",
+      "image": "assets/73d7ed9877bc3b373ef42a3cec0d2e94ee1b2f32c7296c6067032d2b3b949d3e.png",
+      "mask": "assets/aa0516db3a300ffc39d4f12d7b08bcd880e359dd3390548843f60deafb4a777b.png",
+      "observation_key": "capture_00",
+      "piece_id": "capture_00",
+      "size_hw": [
+        256,
+        256
+      ]
+    },
+    "capture_01": {
+      "contour": "assets/93bb2e7e8a7b49adafacca397c09d5c44f0caf64419c01a789aed13319af3ca2.npz",
+      "image": "assets/73d7ed9877bc3b373ef42a3cec0d2e94ee1b2f32c7296c6067032d2b3b949d3e.png",
+      "mask": "assets/aa0516db3a300ffc39d4f12d7b08bcd880e359dd3390548843f60deafb4a777b.png",
+      "observation_key": "capture_01",
+      "piece_id": "capture_01",
+      "size_hw": [
+        256,
+        256
+      ]
+    },
+    "capture_02": {
+      "contour": "assets/93bb2e7e8a7b49adafacca397c09d5c44f0caf64419c01a789aed13319af3ca2.npz",
+      "image": "assets/73d7ed9877bc3b373ef42a3cec0d2e94ee1b2f32c7296c6067032d2b3b949d3e.png",
+      "mask": "assets/aa0516db3a300ffc39d4f12d7b08bcd880e359dd3390548843f60deafb4a777b.png",
+      "observation_key": "capture_02",
+      "piece_id": "capture_02",
+      "size_hw": [
+        256,
+        256
+      ]
+    }
+  },
+  "protected_truth_opened": false,
+  "provenance": {
+    "cpu_cuda_parity": [
+      {
+        "maximum_logit_difference": 9.5367431640625e-07,
+        "model": "pair_mlp_small",
+        "passed": true
+      },
+      {
+        "maximum_logit_difference": 0.0,
+        "model": "paired_strip_cnn_small",
+        "passed": true
+      }
+    ],
+    "historical_control_exactly_reproduced": false,
+    "inference_signature": "641aa26de49ff068678ddc80c3ebb496f481dfc1ae22c121d72125b56a155f70",
+    "inputs": [
+      {
+        "sha256": "930ec79940e0f557bcfa0fdc052f72a129c9927c5ce66c3716e4c33d030215bb",
+        "size": 2037
+      },
+      {
+        "sha256": "66b14238764414d1cc8fa9038da97dfdee2c8a74d070662fe7fc7ca82fb38821",
+        "size": 690
+      },
+      {
+        "sha256": "73d7ed9877bc3b373ef42a3cec0d2e94ee1b2f32c7296c6067032d2b3b949d3e",
+        "size": 758
+      },
+      {
+        "sha256": "aa0516db3a300ffc39d4f12d7b08bcd880e359dd3390548843f60deafb4a777b",
+        "size": 382
+      },
+      {
+        "sha256": "6cd8aa0b2fd53c408e783646d68515d1e781f06329738ebfdf490c26b10a8cac",
+        "size": 2811
+      },
+      {
+        "sha256": "54e20a4696e47b4887827411751c65625a5ca7a8c02719f1e0fc2bac9b250287",
+        "size": 3074
+      },
+      {
+        "sha256": "1cea4bea5b9bcc0d0dfea2905c5020fbc1c57038c858578826107d7f2fa63177",
+        "size": 2808
+      },
+      {
+        "sha256": "54e20a4696e47b4887827411751c65625a5ca7a8c02719f1e0fc2bac9b250287",
+        "size": 3074
+      },
+      {
+        "sha256": "4b094d65301d8d7f88ec613cb6c65269f0b18f670bc424960f991d72bed73656",
+        "size": 2220
+      },
+      {
+        "sha256": "54e20a4696e47b4887827411751c65625a5ca7a8c02719f1e0fc2bac9b250287",
+        "size": 3074
+      }
+    ],
+    "kind": "new_input_frozen_core_composition",
+    "optimizer_steps": 0,
+    "package_manifest_sha256": "86d547731a0b3b629647d01d657c19170859e47264a79ed1e947c2c1e0b6e59e",
+    "recipe": {
+      "global_samples": 512,
+      "historical_chain_exactly_reproduced_on_new_inputs": false,
+      "local_spacing_px": 4.0,
+      "local_uncertainty": 0.25,
+      "local_window_budget": 16,
+      "maximum_candidates": 1024,
+      "name": "frozen-core-composition-v1",
+      "parents_per_physical_pair": 4,
+      "parents_per_query": 20,
+      "retrieval_pool_per_query": 80,
+      "scope": "Frozen shape retrieval, symmetric MLP/CNN ranking, gated windows, similarity, sliding and guarded projective fitting, broad geometry and RGB continuation. No unqualified displacement/choice correction.",
+      "strip_depth": 33,
+      "working_pool_per_physical_pair": 24
+    },
+    "retrieval": {
+      "physical_pairs_with_parents": 1,
+      "queries": 2,
+      "reference_anchors_used": false,
+      "resource_bounds": {
+        "parents_per_physical_pair": 4,
+        "parents_per_query": 20,
+        "retrieval_pool_per_query": 80
+      },
+      "retained_parents": 2,
+      "scored_directed_pairs": 2,
+      "search_domain_exhausted_claimed": false
+    },
+    "search": [
+      {
+        "pieces": [
+          "capture_00",
+          "capture_01"
+        ],
+        "search_audit": {
+          "full_prefilter_checked": true,
+          "generation_seconds": 1.3118851000035647,
+          "guards_and_refinement_seconds": 2.3489286999974865,
+          "learned_model_used_for_generation": false,
+          "projective_attempts": [],
+          "projective_start_selection": {
+            "candidates": 134,
+            "checks": [
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "8af0dacabdd5207d147816bb",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "a6624b9190cdd9860b1a98c3",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "387b8fc2ec2714b844a40ca8",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:9a128f04b5eb4c633c5b832c",
+                "validation_samples": [
+                  63,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "2154149fe1e81bca5725a928",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:60a51610e168e22a2a35d38f",
+                "validation_samples": [
+                  72,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "a308fc9262e2632e1d451400",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "03c2420acc24a73f388313bc",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  1.0667272517086318e-31
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "f2301dd50ad45fb9caab6d38",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "03e3747b2061e11dbc41c426",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "1566055d46321727b00ec992",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "894e7485fe4c24371db565a4",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  1.404382457794859e-31
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "cf85edcfb226ab3d3d51c54f",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "bd582c5ec8309581f2b6ad7b",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "ad21943676e98a63d5dcc754",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "19b7f13f4faf8d5057e7c400",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "6b03b7df8a8c361d0c23b5a9",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "8ac47cf671c7b828e60dd0bb",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "3424d25927e1bec3a54d0697",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  3.417781543737312e-32
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "1fa794809a47f24e59fe3d46",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  77
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "6baf94d961dcd355b2a4d5cc",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "39873f9cf54dfbaa25eae713",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "f4639ef614c34fa690eb5c91",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "e25daff599789b66d9cfd587",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "81efdb6414b32bbe07b530d5",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "417a0272892bc610252fd8b3",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  74
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "e0885efb6e1b712e08eba6e7",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "69a422a255efa2e82450900b",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  68
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "0d2c2cb366d353c3fc2f5768",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "dc6d8febf1ac3433973d6cf4",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  48
+                ]
+              },
+              {
+                "anisotropy": [
+                  0.0,
+                  0.0
+                ],
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "ceb56b4cd6bde79cd305dbb7",
+                "reason": "nearly_straight_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "09a9d4306fe69d789f57d0f7",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  48
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "2da03552a9043fc32bc4453f",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:50442ad739580ebe1e4e8a1d",
+                "validation_samples": [
+                  96,
+                  96
+                ]
+              },
+              {
+                "eligible": false,
+                "optimization_steps": 0,
+                "proposal_id": "00e3b4f84032e69ae8a7f9b5",
+                "reason": "short_fit_support",
+                "selected": false,
+                "source_record_id": "alpha_similarity:f8faac8f65d32c3f203e87b9",
+                "validation_samples": [
+                  96,
+                  56
+                ]
+              }
+            ],
+            "optimization_steps": 0,
+            "policy": "parent_balanced_conditioned_starts_v1",
+            "preflight_checked": 32,
+            "preflight_rejections": {
+              "nearly_straight_fit_support": 17,
+              "short_fit_support": 15
+            },
+            "reference_anchors_used": false,
+            "selected": 0
+          },
+          "reference_anchors_used": false,
+          "rejections": {
+            "broader_support": 8
+          },
+          "searches": [
+            {
+              "coarse_fits": 3969,
+              "fit_batch": 512,
+              "overlap_scales": [
+                1.0,
+                0.875,
+                0.75,
+                0.625,
+                0.5,
+                0.375,
+                0.25,
+                0.1875,
+                0.125
+              ],
+              "parent_index": 0,
+              "position_divisions": 16,
+              "query": 0,
+              "reference_anchors_used": false,
+              "refinement_starts": 16,
+              "refinement_trials": 1335,
+              "target": 1
+            },
+            {
+              "coarse_fits": 3969,
+              "fit_batch": 512,
+              "overlap_scales": [
+                1.0,
+                0.875,
+                0.75,
+                0.625,
+                0.5,
+                0.375,
+                0.25,
+                0.1875,
+                0.125
+              ],
+              "parent_index": 1,
+              "position_divisions": 16,
+              "query": 1,
+              "reference_anchors_used": false,
+              "refinement_starts": 16,
+              "refinement_trials": 1335,
+              "target": 0
+            },
+            {
+              "coarse_fits": 3969,
+              "fit_batch": 512,
+              "overlap_scales": [
+                1.0,
+                0.875,
+                0.75,
+                0.625,
+                0.5,
+                0.375,
+                0.25,
+                0.1875,
+                0.125
+              ],
+              "parent_index": 0,
+              "position_divisions": 16,
+              "query": 0,
+              "reference_anchors_used": false,
+              "refinement_starts": 16,
+              "refinement_trials": 1335,
+              "target": 1
+            },
+            {
+              "coarse_fits": 3969,
+              "fit_batch": 512,
+              "overlap_scales": [
+                1.0,
+                0.875,
+                0.75,
+                0.625,
+                0.5,
+                0.375,
+                0.25,
+                0.1875,
+                0.125
+              ],
+              "parent_index": 1,
+              "position_divisions": 16,
+              "query": 1,
+              "reference_anchors_used": false,
+              "refinement_starts": 16,
+              "refinement_trials": 1335,
+              "target": 0
+            }
+          ],
+          "sliding_bootstrap": [],
+          "stage_counts": {
+            "broader_support_pass": 188,
+            "collision_checked": 192,
+            "collision_pass": 192,
+            "generated": 9580,
+            "geometry_pass": 7167,
+            "projective_pool": 64,
+            "screened": 192,
+            "sliding_pool": 64,
+            "warp_checked": 192,
+            "warp_pass": 192
+          }
+        }
+      }
+    ],
+    "training_performed": false,
+    "validation_truth_opened": false
+  },
+  "puzzle_id": "synthetic_page",
+  "schema_version": "stage3.assembly-evidence.v2",
+  "scores_are_calibrated_probabilities": false,
+  "training_performed": false,
+  "validation_truth_opened": false,
+  "working_pool": {
+    "path": "working_pool.json",
+    "sha256": "c170c98a9610f14c343574fb80e092a0d513d81c6bc39cf53219309d51d733e8",
+    "size": 56033
+  }
+}

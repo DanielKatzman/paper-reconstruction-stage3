@@ -1,0 +1,201 @@
+{
+  "upstream_version": "0.9.31",
+  "source_signature": "610be9108ac03f68328927d551bfc6a0912468e3aa546da998f4ed43a1264e32",
+  "note": "Observable inference retained; research coordination and training/data/label imports removed. Scientific parity is checked on a synthetic production handoff.",
+  "modules": [
+    {
+      "module": "alignment",
+      "kind": "unchanged_module",
+      "upstream_sha256": "a4012e8d8f8809080bf5bf23eb063cf78b5a97c2130f24325c176716aaae75c3"
+    },
+    {
+      "module": "data",
+      "kind": "unchanged_module",
+      "upstream_sha256": "a34ef5d90aac64025b8b836bd2a16893fed8ac5d822908c832c9839d84d80fd8"
+    },
+    {
+      "module": "features",
+      "kind": "unchanged_module",
+      "upstream_sha256": "922faadb9471ab8d475f6c78d8cce48c54d10ffad4a4d4f61716de5090437dc6"
+    },
+    {
+      "module": "windows",
+      "kind": "unchanged_module",
+      "upstream_sha256": "bf3453bff87c3a5146341fb45ecbd45e44be67d8c6899653ecb0e1a8e928dee7"
+    },
+    {
+      "module": "projective",
+      "kind": "unchanged_module",
+      "upstream_sha256": "f55344cf2ab75342c40dc97671f5eb5c2f0508e2ecf8e4e46ece1f116b3dbe69"
+    },
+    {
+      "module": "pose_boundary_evidence",
+      "kind": "unchanged_module",
+      "upstream_sha256": "5ce4a00edd47ad4df7782ab50f5e47f0e3df632feb3e9fb5a34ba006877df2a0"
+    },
+    {
+      "module": "pose_perspective_geometry",
+      "kind": "unchanged_module",
+      "upstream_sha256": "a5073dc9c639ddcc467f9aefbc950ee9b173c905262ee10e7af4dcfcc62c1efb"
+    },
+    {
+      "module": "pose_overlap_geometry",
+      "kind": "unchanged_module",
+      "upstream_sha256": "467b60cd375fd4921078f546142bf889807ed1330736601e99520de12ffedb5e"
+    },
+    {
+      "module": "pose_retention_selection",
+      "kind": "unchanged_module",
+      "upstream_sha256": "145658bfde044a20d9b15a60243fded09d65c58ca2f72b6c5cf6aa0df1760c83"
+    },
+    {
+      "module": "pose_inference_portfolio",
+      "kind": "unchanged_module",
+      "upstream_sha256": "0e173f99cdb3f18b173d63845eeb491869bbc386ad9c82e39d2bc4bf395af8ae"
+    },
+    {
+      "module": "pose_inference_geometry",
+      "kind": "unchanged_module",
+      "upstream_sha256": "8f985f547157b404e6ac9b707c2e16e043ddbc02171579a1b41e32ef45c60aac"
+    },
+    {
+      "module": "pose_visual_evidence",
+      "kind": "unchanged_module",
+      "upstream_sha256": "2a6d2b4aeccba5034d17be1f4ea97e09b5cdad735e775df6e3299dbe8c6dde01"
+    },
+    {
+      "module": "baselines",
+      "kind": "selected_definitions",
+      "definitions": [
+        "BaselineConfig",
+        "descriptor",
+        "ObservableInputs"
+      ],
+      "upstream_sha256": "e7711fe31660a1a81da5526c0283667ff46240d594c595399fed3f1ee303feb2"
+    },
+    {
+      "module": "model_inputs",
+      "kind": "selected_definitions",
+      "definitions": [
+        "fitted_evidence",
+        "observable_pair_evidence"
+      ],
+      "upstream_sha256": "4f37f1482fc717004da1831ef17907e3c526e39a350e8af3ef146fc89d2758b4"
+    },
+    {
+      "module": "reranker_screen_validation",
+      "kind": "selected_definitions",
+      "definitions": [
+        "weights_digest"
+      ],
+      "upstream_sha256": "d9185d54521e10a0d4f2c8fea456ca3c9429b9eb7ebd02a7e941d89b05e481ec"
+    },
+    {
+      "module": "fusion_review_policy",
+      "kind": "selected_definitions",
+      "definitions": [
+        "observed_risk"
+      ],
+      "upstream_sha256": "48cfc6685ce048881da80055eb736f48da0b7ac5a2b1aed5eb58a0687b43a232"
+    },
+    {
+      "module": "pose_inference_contracts",
+      "kind": "selected_definitions",
+      "definitions": [],
+      "upstream_sha256": "661a563d8074bc974e569090c6c901d739a0157ce9feb0680164098129f90fef"
+    },
+    {
+      "module": "pose_correction_geometry",
+      "kind": "selected_definitions",
+      "definitions": [
+        "curve",
+        "diversity_key",
+        "diverse"
+      ],
+      "upstream_sha256": "b3a868e409f6e65f27b17343fb63482be0dc1814da3d256e590a07e0f70702e5"
+    },
+    {
+      "module": "pose_observability_geometry",
+      "kind": "selected_definitions",
+      "definitions": [
+        "tangent"
+      ],
+      "upstream_sha256": "b86eea88c5edb0e965594bd5276e4e37ca51cc54fde29a91e5945f41d324893e"
+    },
+    {
+      "module": "pose_geometry",
+      "kind": "selected_definitions",
+      "definitions": [
+        "span_for",
+        "transform_distance",
+        "hypotheses",
+        "fit_parent"
+      ],
+      "upstream_sha256": "dc0b7b14c2fe655d9328ef4b13e71440623e2c6378be2cf0d8f25ecbf184d0cb"
+    },
+    {
+      "module": "profile_models",
+      "kind": "selected_definitions",
+      "definitions": [
+        "channels",
+        "ResidualConv",
+        "LocalPointBlock",
+        "SequenceEncoder",
+        "CrossBlock",
+        "PairModel"
+      ],
+      "upstream_sha256": "4d52a12cf97eb2fc9dcd41341daa21f9a342cf19e0a81258b93d9965bd00caaf"
+    },
+    {
+      "module": "model_catalogue",
+      "kind": "selected_definitions",
+      "definitions": [
+        "ModelSpec",
+        "ProfileConfig"
+      ],
+      "upstream_sha256": "996e69afb90a5cc66398026cd4542d6fbd4e66dd880d44e0835e379837430bc8"
+    },
+    {
+      "module": "audit",
+      "kind": "selected_definitions",
+      "definitions": [
+        "Files",
+        "keyed",
+        "lock",
+        "production_header",
+        "production_piece"
+      ],
+      "upstream_sha256": "cfb155dc91f2f88934ff7c7d3dc838b8ef7e5c43e47f41f6e65de9407bb1d068"
+    },
+    {
+      "module": "stage4_input",
+      "kind": "selected_definitions",
+      "definitions": [
+        "relative_file",
+        "verify_receipt",
+        "AssemblyInput",
+        "load_bundle"
+      ],
+      "upstream_sha256": "0d34655039b95af7db02c4a0543a333abcbd65561e87306d7d9852048983a7b6"
+    },
+    {
+      "module": "contracts",
+      "kind": "selected_definitions",
+      "definitions": [
+        "ContractError",
+        "require",
+        "digest"
+      ],
+      "upstream_sha256": "f6c20a4d85f07482ccdd72c3282b9d54cedc681ee2105f8e51aebf6597056c85"
+    },
+    {
+      "module": "alpha_bundle",
+      "kind": "selected_definitions",
+      "definitions": [
+        "file_hash",
+        "normalized_matrix"
+      ],
+      "upstream_sha256": "9e89abf1c9437e519bc2b7a68f620a48c43f62951769f1fd427ebede000de2f4"
+    }
+  ]
+}

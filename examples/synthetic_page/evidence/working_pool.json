@@ -1,0 +1,2035 @@
+{
+  "edges": [
+    {
+      "hypothesis_id": "a589d7548a2b0a503e2b3df7f0f00fb77bab44bd61d1574d649860d07d1c0901",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "540bfc25529b02bc0859871b81bc175b8bee95ac05e0df9e1631452c06f62de8",
+        "b85a40810720a61c0195d4a75c0a0e6c78d2bb6f15a85deca527d29b0136595a"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 29.06249999999998,
+          "geometry_score": 0.9999999999999822,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 5.281540617173961e-16,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.1875
+          ],
+          "rms_residual_query_px": 1.5349477418661813e-14,
+          "scale": 0.9999999999999992,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.8125,
+            1.0
+          ],
+          "transform": [
+            [
+              0.9999999999999992,
+              0.0,
+              -159.99999999999983
+            ],
+            [
+              0.0,
+              0.9999999999999992,
+              5.000000000000142
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "8af0dacabdd5207d147816bb",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "540bfc25529b02bc0859871b81bc175b8bee95ac05e0df9e1631452c06f62de8",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          1.0000000000000009,
+          0.0,
+          159.99999999999997
+        ],
+        [
+          0.0,
+          1.0000000000000009,
+          -5.0000000000001465
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9430678058704086
+    },
+    {
+      "hypothesis_id": "1675e381d0d85354aea9b53be5f139d99131490098fd974fa8b501b7ad83da24",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "905a0d3e151eaf45151720debaaeaae54366ebc7b8e4fe180f42a517f69afe42",
+        "58e9992a1d81dd9f8b90062c98219dfd60a52baf8b069bd90a4f9c2fedce5d4b"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 38.75,
+          "geometry_score": 0.9999985767244433,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 4.265808342703158e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.625,
+            0.875
+          ],
+          "rms_residual_query_px": 1.653000732797474e-06,
+          "scale": 1.0078740211520723,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.125,
+            0.373046875
+          ],
+          "transform": [
+            [
+              1.0078740211520723,
+              0.0,
+              -161.63779639963104
+            ],
+            [
+              0.0,
+              1.0078740211520723,
+              4.469487831483136
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "f2301dd50ad45fb9caab6d38",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "58e9992a1d81dd9f8b90062c98219dfd60a52baf8b069bd90a4f9c2fedce5d4b",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          0.9921874946800676,
+          0.0,
+          160.37500025535678
+        ],
+        [
+          0.0,
+          0.9921874946800676,
+          -4.434569934022301
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9415696423055857
+    },
+    {
+      "hypothesis_id": "0b506e22d3cd42910457e3101dd7d57e16761cdf674275cbbbef329781a52d8f",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "24f705d7cd89b888d281f8442cdeebd6e206a90843755dce3c34676826970cef",
+        "32e09a8ed50230e70bfd8df43b4547a4b8dc6b4dd7a67d146b39bcccdd53267c"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 38.75,
+          "geometry_score": 0.9999979784683228,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 6.038834915125964e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.109375,
+            0.359375
+          ],
+          "rms_residual_query_px": 2.340048529611311e-06,
+          "scale": 1.0000000343549955,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.625,
+            0.875
+          ],
+          "transform": [
+            [
+              1.0000000343549955,
+              0.0,
+              159.9999983509602
+            ],
+            [
+              0.0,
+              1.0000000343549955,
+              -7.421878025734884
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "03e3747b2061e11dbc41c426",
+        "query": 0,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 1,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "24f705d7cd89b888d281f8442cdeebd6e206a90843755dce3c34676826970cef",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          1.0000000343549955,
+          0.0,
+          159.9999983509602
+        ],
+        [
+          0.0,
+          1.0000000343549955,
+          -7.421878025734884
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9389895940816586
+    },
+    {
+      "hypothesis_id": "bfd6afb7fdf180c364413c0d2c0294a14918d1c33e22d9b31ca28195b9a89461",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "3cc3a11e54a4e9b8b6df9ef44ce3763b1be8231ff2c1eca790c3d88b4adf787e",
+        "85122757ec75126ea1867fd2a202371a50cfda162f59f2a8e50c36432d28dd1d"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 62.96874992415483,
+          "geometry_score": 0.9999990038378935,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 2.9875844409687025e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.40625
+          ],
+          "rms_residual_query_px": 1.8812445754065412e-06,
+          "scale": 1.0833333320284702,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.5625,
+            0.9375
+          ],
+          "transform": [
+            [
+              1.0833333320284702,
+              0.0,
+              156.00000006263343
+            ],
+            [
+              0.0,
+              1.0833333320284702,
+              -19.911458146376958
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "894e7485fe4c24371db565a4",
+        "query": 0,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 1,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "3cc3a11e54a4e9b8b6df9ef44ce3763b1be8231ff2c1eca790c3d88b4adf787e",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          1.0833333320284702,
+          0.0,
+          156.00000006263343
+        ],
+        [
+          0.0,
+          1.0833333320284702,
+          -19.911458146376958
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9289608208179077
+    },
+    {
+      "hypothesis_id": "f4cd582605e86dcec4a0968eca04fee5e3e62d2e7ab9ade99c69ba8b5897cf2e",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "8d241b0f577117fd11a8092aec00122634c54c869c7231b4d48fbc644984837a",
+        "d907f5fc75380e065002106af94e1f454237e9afb9444da7d737909f5cbb5ed0"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 43.59375,
+          "geometry_score": 0.9999981182457449,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 5.619900976736424e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.625,
+            0.90625
+          ],
+          "rms_residual_query_px": 2.449925582046035e-06,
+          "scale": 1.1250000380506504,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.125,
+            0.375
+          ],
+          "transform": [
+            [
+              1.1250000380506504,
+              0.0,
+              -186.00000791453527
+            ],
+            [
+              0.0,
+              1.1250000380506504,
+              -8.26562831730682
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "cf85edcfb226ab3d3d51c54f",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "8d241b0f577117fd11a8092aec00122634c54c869c7231b4d48fbc644984837a",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          0.8888888588241785,
+          0.0,
+          165.33333477643941
+        ],
+        [
+          0.0,
+          0.8888888588241785,
+          7.347224922435674
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9264780948677194
+    },
+    {
+      "hypothesis_id": "77b38d2a9aeb6db516ec8bdc96deb8a07a44d6ae9e087d7557cfce265ef0a1e5",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "e1956851ddb45791c661814af4be67a9c6ed29128d863e85816d4593c6f97380",
+        "496045e3ebef7258f4fa03fb6d19b6ca2b7af1da4a9d30f2c7ba4a4548431865"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 62.968749830566985,
+          "geometry_score": 0.9999989650809913,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 3.102740571945036e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.5625,
+            0.96875
+          ],
+          "rms_residual_query_px": 1.953756948639573e-06,
+          "scale": 1.0833333304183568,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "transform": [
+            [
+              1.0833333304183568,
+              0.0,
+              -177.33333272701822
+            ],
+            [
+              0.0,
+              1.0833333304183568,
+              5.843750338733628
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "ad21943676e98a63d5dcc754",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "496045e3ebef7258f4fa03fb6d19b6ca2b7af1da4a9d30f2c7ba4a4548431865",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          0.9230769255606901,
+          0.0,
+          163.69230757308688
+        ],
+        [
+          0.0,
+          0.9230769255606901,
+          -5.3942310964224784
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9254861611302979
+    },
+    {
+      "hypothesis_id": "eee427aa042662f628e04855f96ca035934a58c27c52074e5f337bdaaa83c627",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "115f8871de03059203fd32d46f547623c7951d59c827028ba1845f956582ebba",
+        "59cffc7060e68f791b0856a0174677eaaf53882e8996e1af120d4d2c4ea8b5a3"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 58.2763671875,
+          "geometry_score": 0.9999991348692158,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 2.5752287713141397e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.5625,
+            0.9384765625
+          ],
+          "rms_residual_query_px": 1.5007497746891727e-06,
+          "scale": 1.0026041936229553,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "transform": [
+            [
+              1.0026041936229553,
+              0.0,
+              -160.5416722735747
+            ],
+            [
+              0.0,
+              1.0026041936229553,
+              14.411130763116176
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "6b03b7df8a8c361d0c23b5a9",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "115f8871de03059203fd32d46f547623c7951d59c827028ba1845f956582ebba",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          0.9974025705861603,
+          0.0,
+          160.12467661186432
+        ],
+        [
+          0.0,
+          0.9974025705861603,
+          -14.373698868185368
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9253294613858135
+    },
+    {
+      "hypothesis_id": "55d4b1044b6602cc1da8184cacec716c1951ab15d8f193f2bfbedd6e7363015d",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "d24d0cf921a786788f0b3da15c3bbfc06e8251582da95621ccfda0844148f2a0",
+        "fd0542167766c4523a645d6a3b1d20ad6573c035d1503d0fcca4abff0436e4f0"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 29.0625,
+          "geometry_score": 0.9999980555545931,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 5.830645431053274e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.5625,
+            0.75
+          ],
+          "rms_residual_query_px": 1.6945313283998578e-06,
+          "scale": 1.0000000035952816,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.125,
+            0.3125
+          ],
+          "transform": [
+            [
+              1.0000000035952816,
+              0.0,
+              159.99999982742648
+            ],
+            [
+              0.0,
+              1.0000000035952816,
+              -24.375002084070303
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "bd582c5ec8309581f2b6ad7b",
+        "query": 0,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 1,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "d24d0cf921a786788f0b3da15c3bbfc06e8251582da95621ccfda0844148f2a0",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          1.0000000035952816,
+          0.0,
+          159.99999982742648
+        ],
+        [
+          0.0,
+          1.0000000035952816,
+          -24.375002084070303
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9212673799399229
+    },
+    {
+      "hypothesis_id": "6de22d71de353c9106b8392196b8703a23a10ee2aad32285ba230831a53be2e5",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "cd397ad025be9f0626a5b49462d6bcd72e78e3e365986f55b988967a99e73a4d",
+        "97bfa9d2a5cd03d7845208e30757dee88a3e79faf165ca760fd3d57eb0d09509"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 29.0625,
+          "geometry_score": 0.9999980555545918,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 5.830645434876327e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.25,
+            0.4375
+          ],
+          "rms_residual_query_px": 1.6945313295109325e-06,
+          "scale": 1.0000000035952814,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.6875,
+            0.875
+          ],
+          "transform": [
+            [
+              1.0000000035952814,
+              0.0,
+              -160.00000074781855
+            ],
+            [
+              0.0,
+              1.0000000035952814,
+              -14.375002066093828
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "3424d25927e1bec3a54d0697",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "97bfa9d2a5cd03d7845208e30757dee88a3e79faf165ca760fd3d57eb0d09509",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          0.9999999964047186,
+          0.0,
+          160.00000017257352
+        ],
+        [
+          0.0,
+          0.9999999964047186,
+          14.37500201441165
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9212673797224451
+    },
+    {
+      "hypothesis_id": "6dab0b93a7525b06a64ffb51322a5dcbf09e8556a550af1e78585314ba2e4c3d",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "00aaf4921eabc48401e56c35ab11ca04e6c4e0ae0c4159bc6c7b909b467c05f8",
+        "90526a5735f56f86296e2468e9d9e64d5a097a46f012dc52ddcc8bd1c037d575"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 78.25683038245532,
+          "geometry_score": 0.9999992630627582,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 2.1575739494296304e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.375,
+            0.8798828125
+          ],
+          "rms_residual_query_px": 1.688448985981188e-06,
+          "scale": 1.007797199416893,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.25,
+            0.7509765625
+          ],
+          "transform": [
+            [
+              1.007797199416893,
+              0.0,
+              -161.62181747871375
+            ],
+            [
+              0.0,
+              1.007797199416893,
+              -15.808241971727739
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "6baf94d961dcd355b2a4d5cc",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "00aaf4921eabc48401e56c35ab11ca04e6c4e0ae0c4159bc6c7b909b467c05f8",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          0.9922631265284281,
+          0.0,
+          160.37136992663545
+        ],
+        [
+          0.0,
+          0.9922631265284281,
+          15.685935603784488
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9178193543141024
+    },
+    {
+      "hypothesis_id": "ea7abf2d690da261eb2d9be9abd174c66a0c6d17042b517033a916480efb93e1",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "027fd7d7dcdf50fc0d84a8f84685dcff151d52e72d4983241da6940449b1fb6a",
+        "ee6a52c61e37884484af1b70468a51138bb9ac391f4bd1077380eccafdd1a7ab"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 77.5,
+          "geometry_score": 0.9999989543801376,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 3.124959697541017e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.5,
+            1.0
+          ],
+          "rms_residual_query_px": 2.421843765594288e-06,
+          "scale": 1.3333333544916084,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "transform": [
+            [
+              1.3333333544916084,
+              0.0,
+              -229.33333773425454
+            ],
+            [
+              0.0,
+              1.3333333544916084,
+              -11.0000013736625
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "e0885efb6e1b712e08eba6e7",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "027fd7d7dcdf50fc0d84a8f84685dcff151d52e72d4983241da6940449b1fb6a",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          0.7499999880984705,
+          0.0,
+          172.0000005712734
+        ],
+        [
+          0.0,
+          0.7499999880984705,
+          8.250000899330033
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9163977601095734
+    },
+    {
+      "hypothesis_id": "5adb040c5860fba5cd865a45e723f1a5a95f73b7d6ad5c3a87bd47598f8c0f9a",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "5a33a5ea3be8da33c1e35eae47de5a2c9be8ff2bd237f7f1c2537d5602eff07b",
+        "f6f6ca88c96c69652c5e39d54912ec0b0819acd9ef06367a9fbb5432fea2e94f"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 77.5,
+          "geometry_score": 0.999997963094285,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 6.109819202468564e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.5,
+            1.0
+          ],
+          "rms_residual_query_px": 4.7351098819131375e-06,
+          "scale": 1.3333333349407392,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.25,
+            0.625
+          ],
+          "transform": [
+            [
+              1.3333333349407392,
+              0.0,
+              143.99999992284452
+            ],
+            [
+              0.0,
+              1.3333333349407392,
+              -22.666665323279716
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "1fa794809a47f24e59fe3d46",
+        "query": 0,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 1,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "5a33a5ea3be8da33c1e35eae47de5a2c9be8ff2bd237f7f1c2537d5602eff07b",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          1.3333333349407392,
+          0.0,
+          143.99999992284452
+        ],
+        [
+          0.0,
+          1.3333333349407392,
+          -22.666665323279716
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9163972158726486
+    },
+    {
+      "hypothesis_id": "97b938e376e4685f56abb735c29854ebfa3c84187e6d7f1856d7ad5e94e11f75",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "74c3876c3e0d6506738aee8577b9305404d5bc53ce7b30a719975e369e612803",
+        "c55cb4edf4954a1b7ed38dc579d1f9c34a43050f701fa56706e828227107b31e"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 77.49999959641268,
+          "geometry_score": 0.9999974712709674,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 7.58229100593614e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.5,
+            1.0
+          ],
+          "rms_residual_query_px": 5.876275498999343e-06,
+          "scale": 1.3333333263898957,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "transform": [
+            [
+              1.3333333263898957,
+              0.0,
+              144.00000033328502
+            ],
+            [
+              0.0,
+              1.3333333263898957,
+              -74.33333027107867
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "8ac47cf671c7b828e60dd0bb",
+        "query": 0,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 1,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "74c3876c3e0d6506738aee8577b9305404d5bc53ce7b30a719975e369e612803",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          1.3333333263898957,
+          0.0,
+          144.00000033328502
+        ],
+        [
+          0.0,
+          1.3333333263898957,
+          -74.33333027107867
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9163969549277136
+    },
+    {
+      "hypothesis_id": "b11f5389a86ee06c19b77fca20c420d60761219a90b91f4ec8380141c18e8cbb",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "d888e8c5205c6d5f2f78f3c11ef170ae048b138e2d020d43df7ce60592cefa7c",
+        "936789a2692379894400006e17ab5b19ed7e7ea62527403551b32877432643a0"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 135.625,
+          "geometry_score": 0.999999273868331,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 2.1736547531930625e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.875
+          ],
+          "rms_residual_query_px": 2.948019259018091e-06,
+          "scale": 1.1666666740416252,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.25,
+            1.0
+          ],
+          "transform": [
+            [
+              1.1666666740416252,
+              0.0,
+              151.99999964600198
+            ],
+            [
+              0.0,
+              1.1666666740416252,
+              -13.833334007175367
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "39873f9cf54dfbaa25eae713",
+        "query": 0,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 1,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "936789a2692379894400006e17ab5b19ed7e7ea62527403551b32877432643a0",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          1.1666666740416252,
+          0.0,
+          151.99999964600198
+        ],
+        [
+          0.0,
+          1.1666666740416252,
+          -13.833334007175367
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9158663248755492
+    },
+    {
+      "hypothesis_id": "f1b1a56e7a49b7cb98004a3b76cf06ec07110a6704b8ddad06491a7649fc29cd",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "93167e10c94029521934cdf81625fcc878a2d206fede9f8c61d56a685910a02a",
+        "c9da176aa50a1dc7bf88f2c80fc91636ed2156f98aa94d36f6bd280d25cbb8b0"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 77.5,
+          "geometry_score": 0.9999987937512628,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 3.617226267422221e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.5,
+            1.0
+          ],
+          "rms_residual_query_px": 2.8033503572522214e-06,
+          "scale": 1.3333333360393365,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.0625,
+            0.4375
+          ],
+          "transform": [
+            [
+              1.3333333360393365,
+              0.0,
+              -229.333333896182
+            ],
+            [
+              0.0,
+              1.3333333360393365,
+              -23.91666686916254
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "0d2c2cb366d353c3fc2f5768",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "93167e10c94029521934cdf81625fcc878a2d206fede9f8c61d56a685910a02a",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          0.7499999984778732,
+          0.0,
+          172.0000000730621
+        ],
+        [
+          0.0,
+          0.7499999984778732,
+          17.937500115467707
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9158212580173146
+    },
+    {
+      "hypothesis_id": "242d9ef4133e897e2a0460178bb2080da88fce5c96381467a04569a3f3e8e027",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "9be1593ba9ce99d4f8df4cf029e89b7e3c9d795a294526e6e18c5c26d47fd178",
+        "14c707b1b3a432d8e7a40b6aed3e4812b1879df78be2241a10dd188582d02e10"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 82.34375,
+          "geometry_score": 0.9999986277141771,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 4.097482952804449e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.375,
+            0.90625
+          ],
+          "rms_residual_query_px": 3.3740211189499135e-06,
+          "scale": 1.0625000274512328,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.25,
+            0.75
+          ],
+          "transform": [
+            [
+              1.0625000274512328,
+              0.0,
+              -173.00000570985642
+            ],
+            [
+              0.0,
+              1.0625000274512328,
+              -24.640628529569625
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "ceb56b4cd6bde79cd305dbb7",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "14c707b1b3a432d8e7a40b6aed3e4812b1879df78be2241a10dd188582d02e10",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          0.9411764462715729,
+          0.0,
+          162.8235305789645
+        ],
+        [
+          0.0,
+          0.9411764462715729,
+          23.191179193358273
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9156595835855582
+    },
+    {
+      "hypothesis_id": "b40b3d5720be67a671c936f8b74d6481db0c4b0b6b918fecb7982ce20a47e7ba",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "ec65ef68c1a0d074c5ee93665556683153f3eade1cbccf77ed6129664e000a39",
+        "1a336d76ebf2cf1fb597f473c212e046bcb05d0d83892a0237723c90493750cd"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 82.34375,
+          "geometry_score": 0.9999989014157892,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 3.2012559527312816e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.25,
+            0.78125
+          ],
+          "rms_residual_query_px": 2.636034198577165e-06,
+          "scale": 1.062500133872869,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.375,
+            0.875
+          ],
+          "transform": [
+            [
+              1.062500133872869,
+              0.0,
+              156.9999935741023
+            ],
+            [
+              0.0,
+              1.062500133872869,
+              9.851549206355926
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "e25daff599789b66d9cfd587",
+        "query": 0,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 1,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "1a336d76ebf2cf1fb597f473c212e046bcb05d0d83892a0237723c90493750cd",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          1.062500133872869,
+          0.0,
+          156.9999935741023
+        ],
+        [
+          0.0,
+          1.062500133872869,
+          9.851549206355926
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9149003949254175
+    },
+    {
+      "hypothesis_id": "c3d3e3a2efd579ba7433f7c5a4bed16432b39f3848f31a5e3a77cca08c59e183",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "f7452b080235ea3713e389e24e5693671d0854f41147c18d1e32c36c1b55baa0",
+        "4a4cc08c52b4b254132e2992261c655da740991669aba18f162447fff315eb1e"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 58.125,
+          "geometry_score": 0.999997749806894,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 6.628580808187739e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "rms_residual_query_px": 3.852862594759123e-06,
+          "scale": 1.5000002440122293,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.5,
+            0.75
+          ],
+          "transform": [
+            [
+              1.5000002440122293,
+              0.0,
+              -264.0000507545437
+            ],
+            [
+              0.0,
+              1.5000002440122293,
+              -38.37503728626319
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "2da03552a9043fc32bc4453f",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "4a4cc08c52b4b254132e2992261c655da740991669aba18f162447fff315eb1e",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          0.6666665582168046,
+          0.0,
+          176.00000520559337
+        ],
+        [
+          0.0,
+          0.6666665582168046,
+          25.58335402907463
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.912493430094383
+    },
+    {
+      "hypothesis_id": "21190031e80a58e01e1fcb143d7b46be223c20dd97fb9c04773f8c219fc2359d",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "b2cae42be1de09312f98a2b9e516c11075a8a8f285a0775b34160079cf12bb3a",
+        "701f7fc634f3b255a1ba30a48e6d42efd373ed04a64f34c19ab70fa1a51f81fb"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 135.6249994195014,
+          "geometry_score": 0.9999986623440585,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 4.009760377710387e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.875
+          ],
+          "rms_residual_query_px": 5.438237488993109e-06,
+          "scale": 1.3999999940077563,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.125,
+            0.75
+          ],
+          "transform": [
+            [
+              1.3999999940077563,
+              0.0,
+              -243.19999875361333
+            ],
+            [
+              0.0,
+              1.3999999940077563,
+              -21.94999948155464
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "66a022221718567103f89f7f",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "701f7fc634f3b255a1ba30a48e6d42efd373ed04a64f34c19ab70fa1a51f81fb",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          0.7142857173429815,
+          0.0,
+          173.7142855675369
+        ],
+        [
+          0.0,
+          0.7142857173429815,
+          15.67857112536033
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9056753476166152
+    },
+    {
+      "hypothesis_id": "59e618473e17953caa8c7adc587e4b54e2ad05f730de6d06754f7098d0ed88b4",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "c9e998f9aa08e2464370ed74618bc48830943738e36c18439ab4dea7c5f81ee7",
+        "afd6184e9fdb34b410375396b0948f5e4094629cf81fbd4e833a10c59ea49054"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 58.125,
+          "geometry_score": 0.9999983671036824,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 4.801466333252616e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "rms_residual_query_px": 2.790852306203083e-06,
+          "scale": 1.500000194453251,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.375,
+            0.625
+          ],
+          "transform": [
+            [
+              1.500000194453251,
+              0.0,
+              135.99999066624395
+            ],
+            [
+              0.0,
+              1.500000194453251,
+              -118.68752338155299
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "417a0272892bc610252fd8b3",
+        "query": 0,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 1,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "afd6184e9fdb34b410375396b0948f5e4094629cf81fbd4e833a10c59ea49054",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          1.500000194453251,
+          0.0,
+          135.99999066624395
+        ],
+        [
+          0.0,
+          1.500000194453251,
+          -118.68752338155299
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.905238082627415
+    },
+    {
+      "hypothesis_id": "01e782ee17b56e474cc006c49d2b484d3f6d1397c5b6b79c9a0d17547f6e3542",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "06902d66aca8a84925bf24d5bfbeb6b97ecbf2905a220ee235dc3aa56f971210",
+        "6e56df648b20a65ea83d01ca43cf8edc789002423b307bd5ee67f858cc1012c9"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 58.125,
+          "geometry_score": 0.9999973867321743,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 7.730174622723656e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "rms_residual_query_px": 4.493163999458125e-06,
+          "scale": 1.5000002192782123,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.375,
+            0.625
+          ],
+          "transform": [
+            [
+              1.5000002192782123,
+              0.0,
+              -264.00004560986815
+            ],
+            [
+              0.0,
+              1.5000002192782123,
+              -9.31252622279834
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "00f75a956a147af5f5b827c8",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "06902d66aca8a84925bf24d5bfbeb6b97ecbf2905a220ee235dc3aa56f971210",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          0.6666665692096977,
+          0.0,
+          176.00000467793453
+        ],
+        [
+          0.0,
+          0.6666665692096977,
+          6.208349907628314
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9052375311398108
+    },
+    {
+      "hypothesis_id": "a15826a1265422100b56e0c081500da51497e04be16b446dc8295708390f2f8e",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "e5630baf4992e1d3dc2d8a564a61ac900ec921cf7c1435aac039c5bb4d5e5944",
+        "a3672ed979514046cb8d3e5d2fcf8a4625d5b1a8c055fd4d98a50f8dd17dc133"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 140.46875,
+          "geometry_score": 0.9999991094894858,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 2.6614675311321215e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.90625
+          ],
+          "rms_residual_query_px": 3.7385301726371518e-06,
+          "scale": 1.4500000194593892,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.0625,
+            0.6875
+          ],
+          "transform": [
+            [
+              1.4500000194593892,
+              0.0,
+              -253.60000404755294
+            ],
+            [
+              0.0,
+              1.4500000194593892,
+              -16.115627286118382
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "242ae1d083e033919cdcc3ed",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "a3672ed979514046cb8d3e5d2fcf8a4625d5b1a8c055fd4d98a50f8dd17dc133",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          0.6896551631584357,
+          0.0,
+          174.89655216839506
+        ],
+        [
+          0.0,
+          0.6896551631584357,
+          11.11422556540851
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9048801715749324
+    },
+    {
+      "hypothesis_id": "06806c1f9c6cf0f9b6df8274ae320afa05015d6c8564de25ba75fe7a3507aa1b",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "fc5b484cc7c56343b966dd1701e41e5f11a3ecf1a945d5085a0eee7e6514e9d3",
+        "9c0f1387e2ea7d4c6da83000eccb667430313e90560c0dd449b7a4ed033c0d42"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 58.124999378867514,
+          "geometry_score": 0.9999986028418225,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 4.1834628477216064e-08,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "rms_residual_query_px": 2.431637754253337e-06,
+          "scale": 1.9999999786276994,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.3125,
+            0.5
+          ],
+          "transform": [
+            [
+              1.9999999786276994,
+              0.0,
+              -367.99999555456145
+            ],
+            [
+              0.0,
+              1.9999999786276994,
+              -42.999998226116645
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "1903c957b9f6ff9095d66c97",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "9c0f1387e2ea7d4c6da83000eccb667430313e90560c0dd449b7a4ed033c0d42",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_sliding",
+      "transform_b_to_a": [
+        [
+          0.5000000053430752,
+          0.0,
+          183.99999974353238
+        ],
+        [
+          0.0,
+          0.5000000053430752,
+          21.499999342810547
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.904181345261942
+    },
+    {
+      "hypothesis_id": "21916c74daf0e80fc626c631f2a1db40d0df4e74d11a1b8b0541299a8a337484",
+      "observation_a": "capture_00",
+      "observation_b": "capture_01",
+      "occurrence_ids": [
+        "2af65d85b685510d6f6429abbe6a9d5c54e03b961a87c61b66b5db07387ca088",
+        "b829787f3640135076f011c3fa9001c3dd777d74c6e0a44da3c3eee97785788e"
+      ],
+      "piece_a": "capture_00",
+      "piece_b": "capture_01",
+      "pose": {
+        "alignment": {
+          "family": "similarity",
+          "fitted_overlap_length_query_px": 58.125,
+          "geometry_score": 0.9999956552936564,
+          "inward_normal_penalty": 0.0,
+          "mask_collision_proxy": 0.0,
+          "normalized_residual": 1.303414734547954e-07,
+          "pose_confidence_calibrated": false,
+          "query_arc_fraction": [
+            0.0,
+            0.375
+          ],
+          "rms_residual_query_px": 7.576098144559983e-06,
+          "scale": 2.0,
+          "shape_anisotropy": 0.0,
+          "status": "fitted",
+          "target_arc_fraction": [
+            0.8125,
+            1.0
+          ],
+          "transform": [
+            [
+              2.0,
+              0.0,
+              -368.0
+            ],
+            [
+              0.0,
+              2.0,
+              -198.00000015894574
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "transform_coordinates": "target crop -> query crop",
+          "underconstrained": true
+        },
+        "proposal_id": "3ae1f5df0f0e8ed3ddf6451a",
+        "query": 1,
+        "samples": 512,
+        "span_a": null,
+        "span_b": null,
+        "target": 0,
+        "windows": [
+          null,
+          null
+        ]
+      },
+      "representative_occurrence": "2af65d85b685510d6f6429abbe6a9d5c54e03b961a87c61b66b5db07387ca088",
+      "score_method": "alpha_fused",
+      "score_variant": "alpha_projective",
+      "transform_b_to_a": [
+        [
+          0.5,
+          0.0,
+          184.0
+        ],
+        [
+          0.0,
+          0.5,
+          99.00000007947287
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "weight": 0.9041797295909643
+    }
+  ],
+  "maximum_per_physical_pair": 24,
+  "pairs": [
+    {
+      "available_geometries": 69,
+      "pieces": [
+        "capture_00",
+        "capture_01"
+      ],
+      "resource_truncated": true,
+      "working_geometries": 24
+    }
+  ],
+  "schema_version": "stage3.working-pool.v1",
+  "scores_are_calibrated_probabilities": false,
+  "selection": "frozen-control score, native-crop transform diversity at 2 px, then score fill"
+}

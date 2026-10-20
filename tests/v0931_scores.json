@@ -1,0 +1,21 @@
+{
+  "scope": "Synthetic fixture; no real capacity evidence",
+  "scores": [
+    {
+      "query": 0,
+      "target": 1,
+      "scores": {
+        "pair_mlp_small": 0.08048177510499954,
+        "paired_strip_cnn_small": 0.06858545541763306
+      }
+    },
+    {
+      "query": 1,
+      "target": 0,
+      "scores": {
+        "pair_mlp_small": 0.08048177510499954,
+        "paired_strip_cnn_small": 0.06858545541763306
+      }
+    }
+  ]
+}
