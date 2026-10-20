@@ -2,6 +2,8 @@
 
 Stage 3 owns evidence generation. Stage 4 owns global assembly, layout selection and its own versioned output. The Stage 3 repository provides the outgoing file contract and an independent reader, not a complete Stage 4 service.
 
+For a new chat, read the [Stage 4 development handoff](../STAGE4_DEVELOPMENT_HANDOFF.md). It records the frozen baseline, historical findings, local data/code locations, contract details and proposed first implementation/pilot, and includes a starter prompt.
+
 ## Install only the contract in Stage 4
 
 From a checkout of this repository, install `contracts/stage3_to_stage4/v2/sdk` into Stage 4's environment. That is a separate Python distribution named `paper-reconstruction-contracts`. Its source imports no Stage 3 modules and requires no torch, models, datasets or databases.

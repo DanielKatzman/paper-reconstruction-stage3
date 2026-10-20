@@ -36,7 +36,7 @@ The complete input contract, schemas and independent reader are in [contracts/st
 .\.venv\Scripts\python.exe examples\stage4_consumer.py examples\synthetic_page\evidence
 ```
 
-This validates and reads the handoff. A full Stage 4 solver is **not** implemented in this repository. The earlier forest control remains in the local research archive. [Stage 4 integration](docs/STAGE4_INTEGRATION.md) specifies how to start its separate project.
+This validates and reads the handoff. A full Stage 4 solver is **not** implemented in this repository. The earlier forest control remains in the local research archive. For a new development chat, start with the [Stage 4 development handoff](STAGE4_DEVELOPMENT_HANDOFF.md), which includes the project context, first implementation sequence and a starter prompt. [Stage 4 integration](docs/STAGE4_INTEGRATION.md) describes the project boundary.
 
 ## Fresh clone and tests
 
