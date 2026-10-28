@@ -17,7 +17,7 @@ def transform_distance(a,b,points):
     return float(np.max(np.linalg.norm(apply_transform(points,a)-apply_transform(points,b),axis=1)))
 
 
-def hypotheses(first,second,fit_config,config,prepared=None):
+def hypotheses(first,second,fit_config,config,prepared=None,owners=None):
     ar,a,an,al=prepared[0] if prepared is not None else _subarcs(first,fit_config)
     br,b,bn,bl=prepared[1] if prepared is not None else _subarcs(second,fit_config,True)
     if not len(a) or not len(b):return []
@@ -30,6 +30,8 @@ def hypotheses(first,second,fit_config,config,prepared=None):
     normals=np.clip(np.mean((1+np.sum(an[ia]*transformed,axis=2))/2,axis=1),0.,1.)
     length_penalty=np.abs(np.log(np.maximum(al[ia],1e-6)/np.maximum(bl[ib]*scales,1e-6)))
     objective=rms/length/.03+2*normals+.25*length_penalty
+    from .unit_scale import initial_trace
+    initial_trace(owners,matrices,rms,length,normals,config)
     order=np.lexsort((ib,ia,-length,objective));selected=[]
     probe=second['points_xy_crop'][np.linspace(0,len(second['points_xy_crop'])-1,5).round().astype(int)]
     for i in order[:24]:
@@ -54,7 +56,7 @@ def fit_parent(parent,inputs,config):
         sa,sb=span_for(inputs,q,wa),span_for(inputs,t,wb)
         a,b=inputs.features(q,profile,sa),inputs.features(t,profile,sb)
         prepared=(inputs.subarcs(q,profile,sa),inputs.subarcs(t,profile,sb,True))
-        for fit in hypotheses(a,b,inputs.config,config,prepared):
+        for fit in hypotheses(a,b,inputs.config,config,prepared,owners=(q,t)):
             candidates.append({'query':q,'target':t,'windows':windows,'samples':samples,'span_a':sa,'span_b':sb,'alignment':fit})
         tested+=1
     candidates.sort(key=lambda v:(-v['alignment']['geometry_score'],-v['alignment']['fitted_overlap_length_query_px'],str(v['windows'])))

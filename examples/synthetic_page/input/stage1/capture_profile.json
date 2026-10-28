@@ -1,0 +1,12 @@
+{
+  "motion_model": "rotation_translation",
+  "name": "synthetic-shared-scale.v1",
+  "per_piece_resize": false,
+  "perspective": false,
+  "relative_piece_scale": 1.0,
+  "rotation_family": "continuous_rigid",
+  "schema_version": "stage1.capture-profile.v1",
+  "scope": "Synthetic integration fixture; not real-capture qualification",
+  "shared_native_pixel_scale": true,
+  "stage1_masks": "generator_exact_bypass"
+}

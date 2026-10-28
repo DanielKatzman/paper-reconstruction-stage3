@@ -5,18 +5,7 @@ from .alignment import apply_transform,fit_transforms
 from .pose_geometry import transform_distance
 
 
-def correspondences(a,an,b,bn):
-    """Closest compatible segments; continuous projections avoid sample-grid bias."""
-    v=b[1:]-b[:-1];den=np.maximum(np.sum(v*v,axis=1),1e-12)
-    delta=a[:,None,:]-b[None,:-1,:]
-    u=np.clip(np.sum(delta*v[None],axis=2)/den[None],0.,1.)
-    projected=b[None,:-1,:]+u[:,:,None]*v[None]
-    normal=bn[None,:-1,:]*(1-u[:,:,None])+bn[None,1:,:]*u[:,:,None]
-    normal/=np.maximum(np.linalg.norm(normal,axis=2,keepdims=True),1e-12)
-    compatible=np.sum(an[:,None,:]*normal,axis=2)<=-.5
-    distance=np.sum((a[:,None,:]-projected)**2,axis=2)
-    cost=np.where(compatible,distance,np.inf);j=np.argmin(cost,axis=1);i=np.arange(len(a))
-    return np.sqrt(cost[i,j]),j,u[i,j],projected[i,j]
+from .exact_acceleration import correspondences
 
 
 def transformed(feature,matrix):

@@ -1,3 +1,5 @@
+> Historical alpha documentation. For the v2 release use README.md, compatibility.json and docs/ORCHESTRATOR.md.
+
 # Stage 4 is a separate project
 
 Stage 3 owns evidence generation. Stage 4 owns global assembly, layout selection and its own versioned output. The Stage 3 repository provides the outgoing file contract and an independent reader, not a complete Stage 4 service.

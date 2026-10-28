@@ -1,3 +1,5 @@
+> Historical alpha documentation. For the v2 release use README.md, compatibility.json and docs/ORCHESTRATOR.md.
+
 # Stage 4 development handoff
 
 Prepared **2026-10-20** for a new development chat. This document records the current state and recommended next work; the Stage 4 implementation and experiments below have **not** been completed.

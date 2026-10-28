@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 paths = [str(ROOT/'src'), str(ROOT/'contracts/stage3_to_stage4/v2/sdk/src')]
 sys.path[:0] = paths
 os.environ['PYTHONPATH'] = os.pathsep.join(paths)
+os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
 os.environ.setdefault('OMP_NUM_THREADS', '1')
 os.environ.setdefault('MKL_NUM_THREADS', '1')
 result = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover(str(ROOT/'tests'), pattern='test_*.py'))

@@ -1,29 +1,33 @@
-# Alpha cleanup validation — v0.9.32
+# Stage 3 v2 release validation
 
-This is a packaging/runtime extraction of the v0.9.31 frozen-core recipe. It does not change the selected model tensors, launch real inference/assembly experiments or establish a solved-piece capacity.
+Validated 28 October 2026 against Stage 2 v1.0.2 and Stage 4 v2.0.5. This is an integration release of the qualified unit-scale-v5 core. The original 36 core source files, 8 SDK source/schema files, pooling implementation and 3 model/config files match the preserved 48-file inventory byte-for-byte. Model weights and numerical inference/search policies are unchanged.
 
-## Passed checks
+## Local checks
 
-- **21/21 lean-repository tests**, including frozen model/tensor parity, complete occurrence support/evidence, reverse direction, isolated/zero-candidate pieces, interrupted/immutable exports, relocation, asset tampering, path escape, schema/closed-truth rejection and projective composition/division.
-- The original v0.9.31 and cleaned runtime produce **exactly equal complete prediction archives and working pools** on the same synthetic production handoff: 69 geometry groups, 134 occurrences, 24 working edges. Both runs use the existing CUDA environment. See `PARITY.json` for archive/pool hashes and scope.
-- Synthetic observable model inputs are array-equal to the original runtime. CPU frozen pair scores agree to six decimal places; the CUDA run also passes the existing first-batch CPU/CUDA parity checks.
-- Two original checkpoint contexts/tensor digests are preserved in inference-only artifacts. Removing optimizer state reduces the combined model files from 11,774,296 to **3,133,722 bytes**. No weights are trained or selected during cleanup.
-- The contract reader imports independently of Stage 3 and torch. The example Stage 4 process validates the complete synthetic bundle without Stage 3/model/data dependencies.
-- Stage 3 and the contract SDK both build wheels with `--no-index --no-deps --no-build-isolation`. No package is installed, upgraded or downloaded during validation. The SDK wheel includes all three schemas and has no Stage 3/torch dependency.
-- A staging scan finds no private machine paths or credential strings in source/docs/examples and no unexpected large source files. Real documents and datasets are excluded.
+- 31 tests pass: native/support/coordinate contracts, immutable publications, tamper/path rejection, frozen feature/model-score parity, independent CPU reader, release CPU defaults, pooled publication/resume and continuous shared-scale acquisition.
+- `tools/verify_release.py` authenticates the release metadata and qualified inventory.
+- Both the Stage 3 v2.0.0 wheel and SDK 0.1.0 wheel were built without dependency/environment replacement, extracted outside the source path, imported independently, and used to load JSON cache policy and both frozen rankers with CPU-only Torch 2.7.1+cpu.
+- Windows/Linux CPU CI is configured. Local checks do not by themselves establish a passing Linux job; inspect the published workflow results.
 
-## Commands
+## Fresh cross-stage CPU check
 
-```powershell
-.\.venv\Scripts\python.exe scripts\test.py
-.\.venv\Scripts\python.exe scripts\stage3.py verify
-.\.venv\Scripts\python.exe examples\stage4_consumer.py examples\synthetic_page\evidence
+A fresh four-piece generator Stage 1 input was processed by production Stage 2 inference and its standalone verifier, then the released Stage 3 `prepare` interface, then cold Stage 4 v2.0.5. No saved rankings, native-pair caches or previous assembly were reused. No reference/evaluation files were supplied. SDK bytes were compared against the current consumer, and its actual implementation fingerprint matched `6000dccca2004995b02a6b76f21791e5a85b1daabfd235cb755be4761fb69c37`.
+
+| Phase | Seconds |
+| --- | ---: |
+| Stage 2 CPU inference |11.38 |
+| Stage 2 independent verification |0.97 |
+| Stage 3 CPU native inference and pooling |139.88 |
+| Stage 4 cold solve/assessment |6.84 |
+
+The consumer produced one supported connected four-piece assembly. This establishes fresh interoperability, not new reconstruction reliability or thirty-piece throughput. Timings are a single workstation observation; they are not optimization claims. The exact generator-mask case does not independently qualify real-photo segmentation.
+
+Receipts: [integration](../provenance/INTEGRATION_VALIDATION_2026-10-28.json), [installed wheels](../provenance/WHEEL_VALIDATION_2026-10-28.json), [qualified sources](../provenance/qualified_sources.json).
+
+To repeat with compatible source checkouts and explicit interpreters:
+
+```text
+python -B tools/check_integration.py --stage2-source <stage2-v1.0.2> --stage4-source <stage4-v2.0.5> --stage2-python <stage2-python> --stage4-python <stage4-python> --stage1 <small-stage1-with-capture-profile> --output <new-check-directory>
 ```
 
-The validated Windows environment is Python 3.12, NumPy 2.5.3, Pillow 12.3.0, Torch 2.7.1+cu118, threadpoolctl 3.7.0 and jsonschema 4.26.0. The existing environment is retained.
-
-## Limits
-
-The synthetic fixture proves preservation/interoperability, not real reconstruction accuracy. Stage 4 is still a separate solver project to implement and benchmark. The real 4/8-piece pilot and subsequent 12/16/20 progression remain future work. General CPU throughput and Docker runtime have not been profiled.
-
-The old broad research suite is archived rather than folded into the alpha tests. Its Windows SQLite-fixture cleanup errors reproduce on the original v0.9.30 control, as documented in the local v0.9.31 review; no old scientific source/test is edited to hide them. The active runtime no longer depends on those research databases/coordinators.
+Use the CPU-only Stage 3 interpreter for this command. The tool accepts no evaluation reference. Existing Stage 4 fourteen-page and six-piece real-capture results retain their original scope/receipts and were not rerun as new upstream qualifications here. Performance improvements, new coverage policies, model training, and automatic recovery-request handling are outside this release.

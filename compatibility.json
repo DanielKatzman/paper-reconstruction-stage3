@@ -1,0 +1,93 @@
+{
+  "acquisition": {
+    "capture_profile_schema": "stage1.capture-profile.v1",
+    "exact_masks_required": false,
+    "motion_model": "rotation_translation",
+    "page_format_dimensions_and_dpi": "not inferred or required by Stage 3",
+    "per_piece_resize": false,
+    "perspective": false,
+    "relative_piece_scale": 1.0,
+    "rotation": "continuous",
+    "shared_native_pixel_scale": true
+  },
+  "coordinates": {
+    "archive_transform": "piece_b native crop to piece_a native crop; canonical piece_a < piece_b",
+    "contour_order": "clockwise_circular",
+    "origin": "top_left",
+    "units": "native crop pixels",
+    "x_axis": "right",
+    "y_axis": "down"
+  },
+  "downstream": {
+    "commit": "919f206772984798a317b40d53443ded6529ceff",
+    "evidence_schema": "stage3.assembly-evidence.v2",
+    "pool_policy": "support-pose-strata.v1",
+    "release_tag": "v2.0.5",
+    "repository": "https://github.com/DanielKatzman/paper-reconstruction-stage4",
+    "sdk_package": "paper-reconstruction-contracts",
+    "sdk_path": "contracts/stage3_to_stage4/v2/sdk",
+    "sdk_version": "0.1.0",
+    "source_sdk_fingerprint": "6000dccca2004995b02a6b76f21791e5a85b1daabfd235cb755be4761fb69c37",
+    "working_pool_schema": "stage3.working-pool.v1"
+  },
+  "interface": {
+    "commands": [
+      "verify",
+      "infer",
+      "pool",
+      "prepare",
+      "inspect"
+    ],
+    "console_script": "paper-stage3",
+    "module": "paper_reconstruction_stage3_release",
+    "prepare_consumer_bundle_path": "bundle",
+    "prepare_native_path": "native",
+    "progress_stream": "stderr",
+    "result_stream": "stdout JSON",
+    "resume": "repeat identical infer/prepare command; committed native caches and identical pooled publication are authenticated"
+  },
+  "models": [
+    {
+      "name": "pair_mlp_small",
+      "path": "models/pair_mlp_small.pt",
+      "sha256": "5d47fc1f7249fb72b64252e0a448e08e5cc3f09d751621106cc34562eccdb930",
+      "size": 1341677
+    },
+    {
+      "name": "paired_strip_cnn_small",
+      "path": "models/paired_strip_cnn_small.pt",
+      "sha256": "0b26ec36d171bed520062e7cbef2694c30db7b3e3ff37839b8132dcfcdb6bb3e",
+      "size": 1792045
+    }
+  ],
+  "qualification_scope": "Integration release of the preserved qualified core, not new training, speed improvements or a new thirty-piece CPU reliability claim",
+  "qualified_runtime": {
+    "algorithm": "stage3.alpha-evidence.v0931",
+    "candidate_implementation_sha256": "6b0ac07074ff3ecf340aa7c30deae6760d8a8cd4807e3dd9b71348d72e86e66a",
+    "component_software_version": "0.9.32",
+    "models_and_inference_policy_changed": false,
+    "source_inventory": "provenance/qualified_sources.json",
+    "variant": "unit-scale-v5"
+  },
+  "release_version": "2.0.0",
+  "repository": "https://github.com/DanielKatzman/paper-reconstruction-stage3",
+  "runtime": {
+    "cuda_optional": true,
+    "default_device": "cpu",
+    "gpu_required": false,
+    "python_major_minor": "3.12",
+    "torch_version": "2.7.1"
+  },
+  "schema_version": "stage3.release-compatibility.v1",
+  "upstream": {
+    "commit": "84c36bef1669ab421e6907051cf93cb10d087c53",
+    "manifest_schema": "stage2.edge-hypotheses-manifest.v1",
+    "model_release_version": "1.0.0",
+    "model_sha256": "3e80716280375146e2ef66942688e2a262e503df1011918caff262f0bae388a4",
+    "piece_schema": "stage2.edge-hypotheses.v1",
+    "release_manifest_sha256": "0381683f5c8226974d73915b355bdd5936d80707219e7f083dcdf08f1ecfcfbc",
+    "release_tag": "v1.0.2",
+    "repository": "https://github.com/DanielKatzman/paper-reconstruction-stage2",
+    "source_checkpoint_sha256": "36dd4eb0f13bc49fc2efc791cca1de03d34997704e11cce5d7cff8a326c1a6fc"
+  }
+}

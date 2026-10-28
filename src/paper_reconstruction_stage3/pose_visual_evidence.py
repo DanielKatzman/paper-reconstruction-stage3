@@ -5,9 +5,10 @@ from .alignment import apply_transform,translated_transform
 from .features import bilinear
 from .pose_boundary_evidence import correspondences,transformed
 from .pose_observability_geometry import tangent
+from .visual_preparation import prepare_source
 
 
-def visual_profile(first,second,pose,pixels_a,pixels_b,correction,policy):
+def visual_profile(first,second,pose,pixels_a,pixels_b,correction,policy,_preparation=None,_query_owner=None):
     """No labels or learned weights. All shifts compare identical valid samples.
 
     Pair nearest normal-compatible boundaries under the proposed transform,
@@ -16,15 +17,19 @@ def visual_profile(first,second,pose,pixels_a,pixels_b,correction,policy):
     offsets. RGB high-pass signatures remove constant brightness offsets.
     """
     rgb_a,mask_a=pixels_a;rgb_b,mask_b=pixels_b
-    a=np.asarray(first['points_xy_crop'],float);an=np.asarray(first['inward_normal_xy_crop'],float)
+    source=prepare_source(first,pixels_a,policy) if _preparation is None else _preparation.source(_query_owner,first,pixels_a,policy)
+    a,an,direction,depths,ia,va=(source[k] for k in ('a','an','direction','depths','ia','va'))
     matrix=np.asarray(pose['alignment']['transform'],float);b,bn,_=transformed(second,matrix)
-    distance,_,_,_=correspondences(a,an,b,bn);direction=tangent(first)
-    depths=np.asarray(policy['visual_depths_query_px']);qa=a[:,None]+an[:,None]*depths[None,:,None]
-    ia=bilinear(rgb_a,qa).mean(axis=1);va=(bilinear(mask_a,qa)>=policy['visual_mask_validity']).all(axis=1)
+    center_match=correspondences(a,an,b,bn);distance=center_match[0]
     target=[];valid=[]
     for offset in policy['visual_offsets_query_px']:
         moved=translated_transform(matrix,offset*direction)
-        mb,mbn,_=transformed(second,moved);da,ja,u,projected=correspondences(a,an,mb,mbn)
+        if offset==0 and moved.tobytes(order='C')==matrix.tobytes(order='C'):
+            mb,mbn=b,bn;da,ja,u,projected=center_match
+            if _preparation is not None:_preparation.center_reuses+=1
+        else:
+            mb,mbn,_=transformed(second,moved);da,ja,u,projected=correspondences(a,an,mb,mbn)
+            if offset==0 and _preparation is not None:_preparation.center_byte_mismatch_fallbacks+=1
         inward=mbn[ja]*(1-u[:,None])+mbn[ja+1]*u[:,None]
         inward/=np.maximum(np.linalg.norm(inward,axis=1,keepdims=True),1e-12)
         bands=projected[:,None]+inward[:,None]*depths[None,:,None]

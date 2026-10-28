@@ -15,6 +15,8 @@ import numpy as np
 from .alpha_bundle import ALGORITHM, export_bundle, file_hash, normalized_matrix
 from .alpha_package import load_package
 from .contracts import atomic_json, digest, read_json, require
+from .unit_scale import configuration, selection_rows, require_rigid
+from .pose_trace import overlap_trace, bootstrap_stage, generated_trace
 
 
 def production_inputs(stage1, stage2):
@@ -35,32 +37,7 @@ def production_inputs(stage1, stage2):
     return entries, gallery, files.receipt()
 
 
-class FeatureBank:
-    """Same G+P+A tensor construction as the frozen training input contract."""
-    def __init__(self, inputs):
-        self.inputs = inputs; self.cache = OrderedDict(); self.images = OrderedDict()
-
-    def image(self, owner):
-        from .features import masked_pixels
-        obs = self.inputs.gallery[owner][1]['entry']['observation_key']
-        if obs not in self.images:
-            self.images[obs] = masked_pixels(self.inputs.contours[obs])
-            while len(self.images) > 2: self.images.popitem(last=False)
-        self.images.move_to_end(obs); return self.images[obs]
-
-    def features(self, owner):
-        from .features import FeatureConfig, fragment_features
-        if owner not in self.cache:
-            item = self.inputs.gallery[owner][1]; contour = self.inputs.contours[item['entry']['observation_key']]
-            f = fragment_features(contour, item['candidate'], FeatureConfig(512, 33, 0), appearance=True, pixels=self.image(owner))
-            strip = np.moveaxis(f['strip'], -1, 0).copy(); valid = strip[3]
-            rgb = strip[:3].sum(axis=2).T/np.maximum(valid.sum(axis=1), 1e-6)[:, None]
-            seq = np.concatenate((f['geometry'], np.full((512, 1), np.log1p(f['observed_length_px'][0]), np.float32),
-                                  f['probabilities'], np.column_stack((rgb, valid.mean(axis=1)))), axis=1).astype(np.float32)
-            self.cache[owner] = {'sequence': seq, 'strip': strip, 'points': f['points_xy_crop'],
-                                 'normals': f['inward_normal_xy_crop'], 'observed_length': f['observed_length_px']}
-            while len(self.cache) > 32: self.cache.popitem(last=False)
-        self.cache.move_to_end(owner); return self.cache[owner]
+from .bounded_feature_cache import FeatureBank
 
 
 class FrozenRankers:
@@ -194,20 +171,28 @@ def sliding_starts(parent, feature, inputs, base, correction, policy):
     q, t = parent['query'], parent['target']
     first, second = feature(q, 512), feature(t, 512)
     coarse, fine, audit = sliding_fits(first, second, base, SEARCH)
+    overlap_trace(q, t, 'bootstrap', coarse, fine, base)
     values = [p for p in coarse+fine if p['alignment']['normalized_residual'] <= base['maximum_normalized_residual']
               and p['alignment']['inward_normal_penalty'] <= base['maximum_normal_penalty']]
     values, _ = portfolio(values, SEARCH['geometry_screen_per_parent'], second['points_xy_crop'][::64],
         score=lambda p: p['alignment']['geometry_score'], secondary=lambda p: p['alignment']['fitted_overlap_length_query_px'],
         distance=SEARCH['duplicate_px'])
+    bootstrap_stage(q, t, values, 'screened')
     starts = []
     for p in values:
         p.update(query=q, target=t); h = p['alignment']['transform']
+        bootstrap_stage(q, t, [p], 'warp_checked')
         if not warp_check(h, inputs.mask(t).shape, inputs.mask(q).shape, policy)['valid']: continue
+        bootstrap_stage(q, t, [p], 'warp_pass')
+        bootstrap_stage(q, t, [p], 'collision_checked')
         collision = collision_fraction(inputs.mask(q), inputs.mask(t), h, base['collision_grid'], (inputs.mask_samples(q), inputs.mask_samples(t)))
         if collision > base['maximum_pair_collision']: continue
+        bootstrap_stage(q, t, [p], 'collision_pass')
         p['alignment']['mask_collision_proxy'] = collision
         p['_broad'] = evidence(feature(q, 128), feature(t, 128), h, p, correction)
+        bootstrap_stage(q, t, [p], 'broader_support_checked')
         if not p['_broad']['credible']: continue
+        bootstrap_stage(q, t, [p], 'broader_support_pass')
         starts.append(p)
         if len(starts) == base['alternatives_per_parent']: break
     return starts, {**audit, 'admissible_bootstrap_starts': len(starts), 'bounded_screen': len(values)}
@@ -221,6 +206,8 @@ def infer(package, stage1, stage2, output, *, device='cuda', puzzle_id='producti
     from .pose_correction_geometry import curve
     from .pose_boundary_evidence import evidence
     from .pose_visual_evidence import visual_profile
+    from .visual_preparation import VisualPreparationCache
+    from .exact_acceleration import VisualCache
     from .pose_inference_geometry import generate
     from .pose_inference_contracts import SEARCH
     from .alignment import apply_transform
@@ -228,7 +215,8 @@ def infer(package, stage1, stage2, output, *, device='cuda', puzzle_id='producti
     started = time.perf_counter(); root, package_manifest = load_package(package, full=False)
     progress('Authenticate Stage 1/2 production handoff; no labels or training')
     entries, gallery, receipts = production_inputs(stage1, stage2)
-    config = package_manifest['configuration']; recipe = config['recipe']; base = config['pose_configuration']
+    config, receipts = configuration(stage1, package_manifest['configuration'], receipts)
+    recipe = config['recipe']; base = config['pose_configuration']
     require(len(gallery) <= recipe['maximum_candidates'], 'Alpha candidate resource limit exceeded; no silent truncation. Split the capture batch or define a new measured resource policy.')
     output = Path(output).resolve()
     protected = [Path(stage1).resolve(), Path(stage2).resolve(), root]
@@ -261,12 +249,14 @@ def infer(package, stage1, stage2, output, *, device='cuda', puzzle_id='producti
             del rankers
         else: scores = []; parity = []
         parents, retrieval_audit = fuse_parents(scores, geometry, gallery, recipe)
+        chosen = selection_rows(parents, gallery)
+        atomic_json(work/'parent_selection.json', {'inference_signature': signature, 'audit': retrieval_audit, 'rows': chosen, 'payload_sha256': digest(chosen)})
         spacing, uncertainty = observed_risk(inputs); grouped = defaultdict(list)
         for parent in parents:
             attach_windows(parent, inputs, spacing, uncertainty, recipe)
             pair = tuple(sorted(gallery[i][1]['entry']['piece_id'] for i in (parent['query'], parent['target'])))
             grouped[pair].append(parent)
-        variants = {name: {'records': []} for name in ('alpha_similarity', 'alpha_sliding', 'alpha_projective')}; costs = []
+        variants = {name: {'records': []} for name in ('alpha_rigid', 'alpha_sliding', 'alpha_rigid_refined')}; costs = []
         curves = {}
         def feature(owner, count):
             if (owner, count) not in curves:
@@ -283,11 +273,14 @@ def infer(package, stage1, stage2, output, *, device='cuda', puzzle_id='producti
                 new_pairs += 1
                 progress(f'Observable pose search: physical pair {pair_number}/{len(grouped)} {pair}')
                 rows = []; lookup = {}; bootstrap_audit = []; pair_variants = {k: {'records': []} for k in variants}
+                visual_cache = VisualCache()
+                visual_preparation = VisualPreparationCache(pair)
                 def record(pose, variant, parent, index):
                     q, t = pose['query'], pose['target']; h = normalized_matrix(pose['alignment']['transform'])
-                    canonical = h if gallery[q][1]['entry']['piece_id'] == pair[0] else normalized_matrix(np.linalg.inv(h))
+                    require_rigid(h)
+                    canonical = require_rigid(h if gallery[q][1]['entry']['piece_id'] == pair[0] else normalized_matrix(np.linalg.inv(h)))
                     broad = pose.get('_broad') or evidence(feature(q, 128), feature(t, 128), h, pose, config['correction_configuration'])
-                    visual = visual_profile(feature(q, 512), feature(t, 512), pose, bank.image(q), bank.image(t), config['correction_configuration'], config['policy'])
+                    visual = visual_cache.evaluate(q, t, pose, lambda: visual_profile(feature(q, 512), feature(t, 512), pose, bank.image(q), bank.image(t), config['correction_configuration'], config['policy'], visual_preparation, q))
                     weight = .55*pose['alignment']['geometry_score']+.2*parent['retrieval_score']+.25*broad['score']+visual.get('bounded_weight_adjustment', 0.)
                     value = {'record_id': variant+':'+digest([pair, index, q, t, canonical.tolist()])[:24],
                         'source_record_id': pose.get('_source_record_id'), 'piece_a': pair[0], 'piece_b': pair[1],
@@ -302,7 +295,7 @@ def infer(package, stage1, stage2, output, *, device='cuda', puzzle_id='producti
                 probes = np.array([[0, 0], [ww-1, 0], [0, hh-1], [ww-1, hh-1]], float)
                 for pi, parent in enumerate(pair_parents):
                     fitted = fit_parent(parent, inputs, base)
-                    starts = fitted['poses']; start_variant = 'alpha_similarity'
+                    starts = fitted['poses']; start_variant = 'alpha_rigid'
                     if not starts:
                         starts, detail = sliding_starts(parent, feature, inputs, base, config['correction_configuration'], config['policy'])
                         bootstrap_audit.append({'parent_index': pi, **detail}); start_variant = 'alpha_sliding'
@@ -320,9 +313,10 @@ def infer(package, stage1, stage2, output, *, device='cuda', puzzle_id='producti
                     for row in rows:
                         row['_round_robin'] = counts[row['parent_index']]; counts[row['parent_index']] += 1
                     rows.sort(key=lambda r: (r['_round_robin'], r['parent_index'], r['record_id']))
-                    pools, _, audit = generate(rows, feature, inputs.mask, inputs.mask_samples, base,
+                    pools, arrays, audit = generate(rows, feature, inputs.mask, inputs.mask_samples, base,
                                               config['correction_configuration'], config['policy'], SEARCH)
-                    for variant, source_name in (('alpha_sliding', 'sliding_joint'), ('alpha_projective', 'projective_joint')):
+                    generated_trace(pair, arrays, audit)
+                    for variant, source_name in (('alpha_sliding', 'sliding_joint'), ('alpha_rigid_refined', 'projective_joint')):
                         for i, pose in enumerate(pools[source_name]):
                             parent = lookup[pose['_source_record_id']]
                             pair_variants[variant]['records'].append(record(pose, variant, parent, i))
@@ -330,13 +324,15 @@ def infer(package, stage1, stage2, output, *, device='cuda', puzzle_id='producti
                     audit = {'reason': 'no_admissible_similarity_or_sliding_start', 'sliding_search_performed': True,
                              'resource_or_initializer_limit': True, 'search_domain_exhausted_claimed': False}
                 audit['sliding_bootstrap'] = bootstrap_audit
+                audit['exact_visual_cache'] = visual_cache.summary()
+                audit['visual_preparation'] = visual_preparation.summary()
                 block = {'signature': signature, 'pieces': list(pair), 'variants': pair_variants,
                          'sha256': digest(pair_variants), 'search_audit': clean_pose(audit)}
                 atomic_json(cache, block)
             for name in variants: variants[name]['records'].extend(block['variants'][name]['records'])
             costs.append({'pieces': list(pair), 'search_audit': block['search_audit']})
         require(unchanged(receipts, True), 'Stage 1/2 inputs changed during inference')
-        provenance = {'kind': 'new_input_frozen_core_composition', 'inference_signature': signature,
+        provenance = {'runtime_variant': 'unit-scale-v5', 'kind': 'new_input_frozen_core_composition', 'inference_signature': signature,
             'package_manifest_sha256': package_manifest['manifest_sha256'], 'recipe': recipe,
             'inputs': [{'sha256': r['sha256'], 'size': r['size']} for r in receipts],
             'retrieval': retrieval_audit, 'cpu_cuda_parity': parity, 'search': costs,
@@ -347,5 +343,6 @@ def infer(package, stage1, stage2, output, *, device='cuda', puzzle_id='producti
         result = {**load_bundle(output, full=True).summary(), 'invocation_seconds': time.perf_counter()-started,
                   'rankings_reused': rankings_reused, 'physical_pair_caches_reused': resumed_pairs, 'physical_pairs_newly_computed': new_pairs,
                   'device': device, 'reused': False, 'bundle': str(output), 'source_inputs_verified_unchanged': True}
+        result['feature_image_cache'] = bank.summary()
         atomic_json(work/'completion.json', {'signature': signature, 'manifest_sha256': manifest['manifest_sha256'], 'summary': result})
         return result

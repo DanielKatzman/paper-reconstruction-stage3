@@ -3,6 +3,7 @@ import numpy as np
 from .alignment import fit_transforms
 from .contracts import digest
 from .pose_correction_geometry import diverse
+from .unit_scale import native_parameters, refinement_parameters
 
 
 def intervals(length, minimum, fractions, divisions):
@@ -54,8 +55,7 @@ def fits(first,second,parameters,base):
 
 def sliding_fits(first,second,base,configuration):
     lengths=[float(f['observed_length_px'][0]) for f in (first,second)]
-    arcs=[intervals(length,base['minimum_fit_length_px'],configuration['overlap_fractions'],configuration['overlap_position_divisions']) for length in lengths]
-    parameters=[(*a,*b) for a in arcs[0] for b in arcs[1]]
+    parameters=native_parameters(first,second,base,configuration)
     coarse=[];chunk=configuration['overlap_fit_batch']
     for start in range(0,len(parameters),chunk):coarse.extend(fits(first,second,parameters[start:start+chunk],base))
     # Diverse starts are chosen by observable geometry before any evaluator sees fits.
@@ -64,13 +64,7 @@ def sliding_fits(first,second,base,configuration):
     refined=[];current=seeds
     for step in configuration['overlap_refinement_steps']:
         for _ in range(2):
-            parameters=[];owners=[]
-            for i,pose in enumerate(current):
-                for axis in range(4):
-                    for direction in (-1,1):
-                        trial=np.asarray(pose['_parameters']).copy();trial[axis]+=direction*step
-                        if any(trial[k]<0 or trial[k+1]*lengths[k//2]<base['minimum_fit_length_px'] or trial[k]+trial[k+1]>1+1e-12 for k in (0,2)):continue
-                        parameters.append(trial);owners.append(i)
+            parameters,owners=refinement_parameters(current,lengths,base['minimum_fit_length_px'],step)
             values=fits(first,second,parameters,base);refined.extend(values)
             next_=list(current)
             for pose,owner in zip(values,owners):

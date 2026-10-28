@@ -1,3 +1,5 @@
+> Historical alpha documentation. For the v2 release use README.md, compatibility.json and docs/ORCHESTRATOR.md.
+
 # Alpha cleanup inventory
 
 ## Keep in GitHub

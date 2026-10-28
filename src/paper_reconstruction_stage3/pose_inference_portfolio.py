@@ -4,7 +4,6 @@ from collections import Counter
 import numpy as np
 from .alignment import apply_transform
 from .pose_perspective_geometry import blocks, distances
-from .projective import fit_homography
 
 
 def curve_support(first, second):
@@ -64,30 +63,7 @@ def parent_portfolio(saved, feature, canonical_map, search, policy):
                      'reference_anchors_used': False}
 
 
-def projective_preflight(first, second, pose, policy):
-    """Check the exact first fit's conditioning without taking an update step."""
-    h = np.asarray(pose['alignment']['transform'], float)
-    da, db, pa, pb, ja, jb = distances(first, second, h)
-    fixed = [(blocks(len(d), policy['validation_blocks']) % 2 == (1-side)) &
-             (d <= policy['refinement_distance_px']) for side, d in enumerate((da, db))]
-    detail = {'validation_samples': [int(x.sum()) for x in fixed], 'optimization_steps': 0}
-    if min(detail['validation_samples']) < policy['minimum_validation_samples']:
-        return {'eligible': False, 'reason': 'insufficient_fixed_validation', **detail}
-    ta = blocks(len(da), policy['validation_blocks']) % 2 == 0
-    tb = blocks(len(db), policy['validation_blocks']) % 2 == 1
-    ia = ta & (da <= policy['refinement_distance_px']) & tb[ja] & tb[ja+1]
-    ib = tb & (db <= policy['refinement_distance_px']) & ta[jb] & ta[jb+1]
-    x = np.concatenate((np.asarray(first['points_xy_crop'])[ia], pb[ib]))
-    y = np.concatenate((apply_transform(pa[ia], np.linalg.inv(h)), np.asarray(second['points_xy_crop'])[ib]))
-    errors = np.concatenate((da[ia], db[ib]))
-    if len(x) < policy['minimum_fit_pairs']:
-        return {'eligible': False, 'reason': 'insufficient_fit_pairs', **detail}
-    keep = errors <= max(float(np.quantile(errors, policy['robust_keep_fraction'])), 1e-8)
-    x, y = x[keep], y[keep]
-    if len(x) < policy['minimum_fit_pairs'] or min(np.linalg.norm(np.ptp(x, axis=0)), np.linalg.norm(np.ptp(y, axis=0))) < policy['minimum_fit_length_px']:
-        return {'eligible': False, 'reason': 'short_fit_support', **detail}
-    fitted, fit = fit_homography(x, y, h, policy)
-    return {'eligible': fitted is not None, **fit, **detail}
+from .unit_scale import rigid_preflight as projective_preflight
 
 
 def start_portfolio(starts, feature, search, policy):

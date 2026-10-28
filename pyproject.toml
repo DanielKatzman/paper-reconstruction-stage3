@@ -4,9 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paper-reconstruction-stage3"
-version = "0.9.32"
-description = "Stage 3 alpha: frozen observable join evidence for a separate assembly service"
-requires-python = ">=3.10"
+version = "2.0.0"
+description = "CPU-default qualified unit-scale evidence producer for the paper reconstruction pipeline"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
 dependencies = ["paper-reconstruction-contracts==0.1.0", "numpy>=1.24", "Pillow>=10", "threadpoolctl>=3.2"]
 
 [project.optional-dependencies]
@@ -14,7 +15,11 @@ inference = ["torch==2.7.1"]
 test = ["jsonschema>=4,<5"]
 
 [project.scripts]
-paper-stage3 = "paper_reconstruction_stage3.cli:main"
+paper-stage3 = "paper_reconstruction_stage3_release.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+paper_reconstruction_stage3 = ["*.json"]
+paper_reconstruction_stage3_release = ["*.json"]

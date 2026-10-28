@@ -4,7 +4,7 @@
 SEARCH = {
     'candidate_parents_per_pair': 4,
     'parent_policy': 'quality_curvature_length_edge_diversity_v1',
-    'projective_start_policy': 'parent_balanced_conditioned_starts_v1',
+    'projective_start_policy': 'parent_balanced_rigid_starts.v1',
     'projective_preflight_cap': 32,
     'overlap_fractions': [1., .875, .75, .625, .5, .375, .25, .1875, .125],
     'overlap_position_divisions': 16, 'overlap_fit_batch': 512,
@@ -17,7 +17,7 @@ SEARCH = {
 
 
 STAGES = ('generated', 'geometry_pass', 'screened', 'warp_checked', 'warp_pass',
-          'collision_checked', 'collision_pass', 'broader_support_pass', 'sliding_pool', 'projective_pool')
+          'collision_checked', 'collision_pass', 'broader_support_pass', 'sliding_pool', 'rigid_refined_pool')
 
 
-ORIGINS = ('sliding_coarse', 'sliding_fine', 'projective_refinement')
+ORIGINS = ('sliding_coarse', 'sliding_fine', 'rigid_refinement')

@@ -11,6 +11,7 @@ from .pose_perspective_geometry import refine
 from .pose_retention_selection import portfolio
 from .projective import warp_check
 from .pose_inference_contracts import STAGES, ORIGINS
+from .pose_trace import overlap_trace
 
 
 def generate(parents, feature, mask, mask_samples, base, correction, policy, search):
@@ -45,6 +46,7 @@ def generate(parents, feature, mask, mask_samples, base, correction, policy, sea
         q, t = parent['pose']['query'], parent['pose']['target']
         first, second = feature(q, 512), feature(t, 512)
         coarse, fine, stats = sliding_fits(first, second, base, search)
+        overlap_trace(q, t, 'generation', coarse, fine, base, parent['parent_index'])
         searches.append({'parent_index': parent['parent_index'], 'query': q, 'target': t, **stats})
         good = []
         for origin, values in (('sliding_coarse', coarse), ('sliding_fine', fine)):
@@ -113,15 +115,15 @@ def generate(parents, feature, mask, mask_samples, base, correction, policy, sea
     projective = []; attempts = []
     for source in seeds:
         p = copy.deepcopy(source); q, t = p['query'], p['target']
-        h, details = refine(feature(q, 192), feature(t, 192), p, p['alignment']['transform'], 'projective', base, policy, mask(t).shape, mask(q).shape)
+        h, details = refine(feature(q, 192), feature(t, 192), p, p['alignment']['transform'], 'rigid', base, policy, mask(t).shape, mask(q).shape)
         attempt = {'source_proposal_id': p['proposal_id'], 'source_record_id': p['_source_record_id'], **details}
         attempts.append(attempt)
         if not details['accepted_iterations']: continue
         parent = parent_lookup[p['_source_record_id']]
         p['inference_source_alignment'] = copy.deepcopy(p['alignment'])
-        p['alignment'].update(transform=np.asarray(h).tolist(), family='projective')
-        p['inference_projective_refinement'] = details
-        remember(p, 'projective_refinement', parent)
+        p['alignment'].update(transform=np.asarray(h).tolist(), family='rigid')
+        p['inference_rigid_refinement'] = details
+        remember(p, 'rigid_refinement', parent)
         mark(p, 'geometry_pass'); mark(p, 'screened'); mark(p, 'warp_checked')
         if not warp_check(h, mask(t).shape, mask(q).shape, policy)['valid']:
             failures['projective_warp'] += 1; continue
@@ -137,7 +139,7 @@ def generate(parents, feature, mask, mask_samples, base, correction, policy, sea
             mark(p, 'broader_support_pass'); projective.append(p)
         else: failures['projective_broader_support'] += 1
     combined = choose(screened_pool + projective, search['novel_pool_cap'])
-    for p in combined: mark(p, 'projective_pool')
+    for p in combined: mark(p, 'rigid_refined_pool')
     arrays = {
         'matrix': np.asarray([r['matrix'] for r in trace], dtype=np.float64).reshape(-1, 3, 3),
         **{k: np.asarray([r[k] for r in trace], dtype=dtype) for k, dtype in

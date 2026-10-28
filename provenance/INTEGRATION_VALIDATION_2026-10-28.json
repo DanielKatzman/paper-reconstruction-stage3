@@ -1,0 +1,47 @@
+{
+  "actual_stage4_implementation_verified": "6000dccca2004995b02a6b76f21791e5a85b1daabfd235cb755be4761fb69c37",
+  "all_pieces_connected": true,
+  "assessment_status": "supported",
+  "device": "cpu",
+  "downstream_release": "v2.0.5",
+  "pieces": 4,
+  "qualified_inventory_files": 48,
+  "references_opened": false,
+  "release_version": "2.0.0",
+  "schema_version": "stage3.integration-check.v1",
+  "scope": "Fresh small-case CPU interoperability; not a new thirty-piece accuracy/performance qualification",
+  "sdk_bytes_match": true,
+  "stage2_model_manifest_sha256": "0381683f5c8226974d73915b355bdd5936d80707219e7f083dcdf08f1ecfcfbc",
+  "stage3_bundle_manifest_sha256": "f6b3577431ae1ba6b25f5848f498b8c491c63c6e2aee91b22b5dfc3a139b17a8",
+  "stage4_result_sha256": "4132de90a4a0c775f162ad17e077f55577991dd2f3abf989cf990966431c0afa",
+  "timing": {
+    "stage2": {
+      "log_sha256": "1e1b58d55575590b487b612c52ee304ed5884d862c076d0a31a2357c35c415f1",
+      "returncode": 0,
+      "seconds": 11.375
+    },
+    "stage2_verify": {
+      "log_sha256": "2b37b5dd92769e8db16993bd5b54a14ac519ff93b0c3f7abee036998d01c9314",
+      "returncode": 0,
+      "seconds": 0.9690000000000509
+    },
+    "stage3_prepare": {
+      "log_sha256": "2fa78a8fb430104eb750c8f3ab5ac2f5b46561a9ad2a09a37d47f06373b8e53e",
+      "returncode": 0,
+      "seconds": 139.875
+    },
+    "stage4": {
+      "log_sha256": "9bfef9a1190da4d285489113b1dd17cc431c272d25b8ad417b383dcc60ccb4ad",
+      "returncode": 0,
+      "seconds": 6.842999999999847
+    }
+  },
+  "torch_cuda_runtime": null,
+  "torch_version": "2.7.1+cpu",
+  "unit_tests": {
+    "failed": 0,
+    "passed": 31,
+    "scope": "Existing frozen-score/contract tests plus release CPU defaults, pooling, resume and capture-profile checks"
+  },
+  "upstream_release": "v1.0.2"
+}

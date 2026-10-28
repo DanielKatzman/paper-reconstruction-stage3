@@ -1,0 +1,12 @@
+{
+  "both_frozen_models_loaded_on_cpu": true,
+  "component_version": "0.9.32",
+  "installed_wheels_imported": true,
+  "json_package_data_loaded": true,
+  "release_version": "2.0.0",
+  "torch_version": "2.7.1+cpu",
+  "wheel_sha256": {
+    "paper_reconstruction_contracts-0.1.0-py3-none-any.whl": "c4897f9b8abc1ba73a9ba37883d2693ce7ea4211144b929d84bc277e6699868d",
+    "paper_reconstruction_stage3-2.0.0-py3-none-any.whl": "3c3595eeccd559dcb623c9c28c1132ff287dab6e224dccf5a39415477c39dec6"
+  }
+}
